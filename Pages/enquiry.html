@@ -7,45 +7,44 @@
     <title>Green Roots Organics | Enquiry</title>
     <link rel="stylesheet" href="../Assets/style.css">
 </head>
-<body>
-<header>
+<body class="enquiry-page">
+<header class="site-header">
     <div class="logo">Green Roots Organics</div>
-    <nav aria-label="Main navigation">
-        <a href="../index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="descriptive.html">Products</a>
-        <a href="context.html">Information</a>
-        <a href="enquiry.html">Enquiry</a>
+    <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="descriptive.html">Products</a>
+        <a class="nav-link" href="context.html">Information</a>
+        <a class="nav-link active" href="enquiry.html">Enquiry</a>
     </nav>
 </header>
 
-<main>
-    <h1>Contact & Enquiry</h1>
-    <div class="intro">
-        <p>Have a question about our organic fruit, vegetables, subscription boxes or delivery service? Complete the form below and provide as much detail as possible so that we can understand your request.</p>
-        <p>For subscription enquiries, please mention whether you are interested in a weekly or bi-weekly box and include any useful delivery information.</p>
-    </div>
+<main class="site-main enquiry-main">
+    <section class="enquiry-intro">
+        <h1 class="page-title">Contact & Enquiry</h1>
+        <div class="intro enquiry-intro-box">
+            <p>Have a question about our organic fruit, vegetables, subscription boxes or delivery service? Complete the form below and provide as much detail as possible so that we can understand your request.</p>
+            <p>For subscription enquiries, please mention whether you are interested in a weekly or bi-weekly box and include any useful delivery information.</p>
+        </div>
+    </section>
 
-    <div class="info">
+    <section class="info enquiry-info">
         <h2>What You Can Ask About</h2>
-        <ul><li>Current fruit and vegetable availability</li><li>Weekly and bi-weekly produce subscriptions</li><li>Delivery areas and scheduling</li><li>Product quantities and quote requests</li><li>General questions about Green Roots Organics</li></ul>
-    </div>
+        <ul class="enquiry-list"><li>Current fruit and vegetable availability</li><li>Weekly and bi-weekly produce subscriptions</li><li>Delivery areas and scheduling</li><li>Product quantities and quote requests</li><li>General questions about Green Roots Organics</li></ul>
+    </section>
 
-    <form action="#" method="post">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-        <label for="enquiry">Enquiry Type</label>
-        <select id="enquiry" name="enquiry" required><option value="">Select an option</option><option value="products">Products</option><option value="subscription">Subscription</option><option value="delivery">Delivery</option><option value="quote">Quote Request</option><option value="general">General Information</option><option value="other">Other</option></select>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Write your enquiry here..." required></textarea>
-        <button type="submit">Submit Enquiry</button>
-    </form>
+    <section class="form-section">
+        <form class="enquiry-form" action="#" method="post">
+            <div class="form-group"><label for="name">Full Name</label><input class="form-control" type="text" id="name" name="name" placeholder="Enter your full name" required></div>
+            <div class="form-group"><label for="email">Email Address</label><input class="form-control" type="email" id="email" name="email" placeholder="Enter your email address" required></div>
+            <div class="form-group"><label for="phone">Phone Number</label><input class="form-control" type="tel" id="phone" name="phone" placeholder="Enter your phone number"></div>
+            <div class="form-group"><label for="enquiry">Enquiry Type</label><select class="form-control" id="enquiry" name="enquiry" required><option value="">Select an option</option><option value="products">Products</option><option value="subscription">Subscription</option><option value="delivery">Delivery</option><option value="quote">Quote Request</option><option value="general">General Information</option><option value="other">Other</option></select></div>
+            <div class="form-group"><label for="message">Message</label><textarea class="form-control message-field" id="message" name="message" placeholder="Write your enquiry here..." required></textarea></div>
+            <button class="submit-button" type="submit">Submit Enquiry</button>
+        </form>
+    </section>
 </main>
 
-<footer><p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p></footer>
+<footer class="site-footer"><p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p></footer>
 </body>
 </html>

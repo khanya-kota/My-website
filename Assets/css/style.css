@@ -1,17 +1,30 @@
+/* ==========================================
+   GREEN ROOTS ORGANICS - CSS TEMPLATE
+   Edit the values below to customise the site.
+   ========================================== */
+
+/* ---------- 1. GENERAL SETTINGS ---------- */
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    background: #f5f8f2;
-    color: #263326;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Change the font here */
+    font-size: 16px;
+    line-height: 1.7;
+    background: #f5f8f2; /* Page background */
+    color: #263326; /* Main text colour */
+}
+
+/* ---------- 2. HEADER ---------- */
+.site-header,
 header {
-    background: #315c35;
+    background: #315c35; /* Header background */
     color: white;
     padding: 18px 8%;
     display: flex;
@@ -26,24 +39,61 @@ header {
     font-weight: bold;
 }
 
+/* ---------- 3. NAVIGATION ---------- */
+.site-nav,
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.nav-link,
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 4px;
+    padding: 6px 8px;
     font-weight: bold;
 }
 
+.nav-link:hover,
+.nav-link:focus,
 nav a:hover,
 nav a:focus {
     text-decoration: underline;
 }
 
+/* ---------- 4. MAIN CONTENT ---------- */
 main {
     max-width: 1100px;
     margin: auto;
     padding: 35px 20px;
 }
 
+.page-title,
+h1,
+h2 {
+    color: #315c35;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: #315c35;
+}
+
+.content-section,
+section {
+    margin-top: 35px;
+}
+
+/* ---------- 5. HERO SECTION ---------- */
 .hero {
     background: #dfeedd;
     padding: 55px 30px;
@@ -51,20 +101,17 @@ main {
     text-align: center;
 }
 
-.hero h1 {
+.hero-title {
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
-h1,
-h2 {
-    color: #315c35;
+.hero-text {
+    max-width: 750px;
+    margin: 0 auto 20px;
 }
 
-section {
-    margin-top: 35px;
-}
-
+/* ---------- 6. CARDS ---------- */
 .cards,
 .products {
     display: grid;
@@ -73,8 +120,11 @@ section {
 }
 
 .card,
+.feature-card,
 .product,
+.product-card,
 .box,
+.info-box,
 article,
 .intro,
 .info,
@@ -85,14 +135,15 @@ form {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.box,
-article,
-.intro,
-.info,
-form {
-    margin-bottom: 25px;
+.card:hover,
+.feature-card:hover,
+.product:hover,
+.product-card:hover {
+    transform: translateY(-2px);
+    transition: 0.2s ease;
 }
 
+/* ---------- 7. HIGHLIGHT / TIP BOXES ---------- */
 .highlight,
 .tip {
     background: #dfeedd;
@@ -104,7 +155,9 @@ form {
     border-left: 5px solid #315c35;
 }
 
+/* ---------- 8. BUTTONS ---------- */
 .button,
+.btn,
 button {
     display: inline-block;
     background: #315c35;
@@ -119,8 +172,14 @@ button {
 }
 
 .button:hover,
+.btn:hover,
 button:hover {
     background: #244629;
+}
+
+/* ---------- 9. FORMS ---------- */
+.form-group {
+    margin-bottom: 18px;
 }
 
 label {
@@ -138,6 +197,14 @@ textarea {
     border: 1px solid #aaa;
     border-radius: 5px;
     font: inherit;
+    background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #315c35;
+    border-color: #315c35;
 }
 
 textarea {
@@ -145,6 +212,18 @@ textarea {
     resize: vertical;
 }
 
+/* ---------- 10. LISTS ---------- */
+ul,
+ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* ---------- 11. FOOTER ---------- */
+.site-footer,
 footer {
     text-align: center;
     padding: 25px;
@@ -153,17 +232,52 @@ footer {
     margin-top: 30px;
 }
 
+/* ---------- 12. RESPONSIVE DESIGN ---------- */
 @media (max-width: 700px) {
+    .site-header,
     header {
         padding: 18px 5%;
+        flex-direction: column;
+        text-align: center;
     }
 
+    .site-nav,
+    nav {
+        justify-content: center;
+    }
+
+    .nav-link,
     nav a {
         display: inline-block;
-        margin: 5px;
+        margin: 4px;
     }
 
-    .hero h1 {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero-title,
+    h1 {
         font-size: 2rem;
     }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
+
+/* ---------- 13. CUSTOMISE HERE ---------- */
+/*
+   Change these examples to experiment with your design:
+
+   Background: #f5f8f2
+   Main green: #315c35
+   Dark green: #244629
+   Light green: #dfeedd
+   White: #ffffff
+
+   Example:
+   body { background: #ffffff; }
+   .logo { font-size: 1.6rem; }
+   h1 { font-size: 3rem; }
+*/
