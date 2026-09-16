@@ -5,22 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact Green Roots Organics for product, subscription, delivery and quotation enquiries.">
     <title>Green Roots Organics | Enquiry</title>
-    <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; background: #f5f8f2; color: #263326; }
-        header { background: #315c35; color: white; padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.4rem; font-weight: bold; }
-        nav a { color: white; text-decoration: none; margin: 0 8px; font-weight: bold; }
-        main { max-width: 900px; margin: auto; padding: 35px 20px; }
-        .intro, form, .info { background: white; padding: 25px; border-radius: 10px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
-        h1, h2 { color: #315c35; }
-        label { display: block; margin-top: 15px; font-weight: bold; }
-        input, select, textarea { width: 100%; padding: 12px; margin-top: 6px; border: 1px solid #aaa; border-radius: 5px; font: inherit; }
-        textarea { min-height: 140px; resize: vertical; }
-        button { margin-top: 20px; padding: 12px 24px; background: #315c35; color: white; border: 0; border-radius: 6px; cursor: pointer; font-weight: bold; }
-        button:hover { background: #244629; }
-        footer { text-align: center; padding: 25px; background: #263326; color: white; margin-top: 30px; }
-    </style>
+    <link rel="stylesheet" href="../Assets/style.css">
 </head>
 <body>
 <header>
@@ -28,7 +13,7 @@
     <nav aria-label="Main navigation">
         <a href="../index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="../descriptive.html">Products</a>
+        <a href="descriptive.html">Products</a>
         <a href="context.html">Information</a>
         <a href="enquiry.html">Enquiry</a>
     </nav>
@@ -43,45 +28,24 @@
 
     <div class="info">
         <h2>What You Can Ask About</h2>
-        <ul>
-            <li>Current fruit and vegetable availability</li>
-            <li>Weekly and bi-weekly produce subscriptions</li>
-            <li>Delivery areas and scheduling</li>
-            <li>Product quantities and quote requests</li>
-            <li>General questions about Green Roots Organics</li>
-        </ul>
+        <ul><li>Current fruit and vegetable availability</li><li>Weekly and bi-weekly produce subscriptions</li><li>Delivery areas and scheduling</li><li>Product quantities and quote requests</li><li>General questions about Green Roots Organics</li></ul>
     </div>
 
     <form action="#" method="post">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-
         <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-
         <label for="enquiry">Enquiry Type</label>
-        <select id="enquiry" name="enquiry" required>
-            <option value="">Select an option</option>
-            <option value="products">Products</option>
-            <option value="subscription">Subscription</option>
-            <option value="delivery">Delivery</option>
-            <option value="quote">Quote Request</option>
-            <option value="general">General Information</option>
-            <option value="other">Other</option>
-        </select>
-
+        <select id="enquiry" name="enquiry" required><option value="">Select an option</option><option value="products">Products</option><option value="subscription">Subscription</option><option value="delivery">Delivery</option><option value="quote">Quote Request</option><option value="general">General Information</option><option value="other">Other</option></select>
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Write your enquiry here..." required></textarea>
-
         <button type="submit">Submit Enquiry</button>
     </form>
 </main>
 
-<footer>
-    <p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p>
-</footer>
+<footer><p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p></footer>
 </body>
 </html>
