@@ -190,35 +190,29 @@ The website uses:
 
 ---
 
-## 8. Technologies
+## 8. Technologies Used
 
-### Frontend
+The website is developed using **HTML5, CSS3 and JavaScript only**.
 
-- HTML5
-- CSS3
-- JavaScript
-- React.js
+### HTML5
 
-### Backend
+HTML5 is used to create the structure and content of all website pages, including headings, paragraphs, navigation, sections, product information and the enquiry form.
 
-- PHP
-- WordPress
-- WooCommerce
+### CSS3
 
-Alternatively:
+CSS3 is used to style the website, including the colour scheme, typography, spacing, navigation, cards, buttons, forms, layout and responsive design.
 
-- Node.js
-- Express
+### JavaScript
 
-### Database
+JavaScript is used to add client-side interactivity and functionality to the website where required.
 
-- MySQL
+### Development and Version Control Tools
 
-### Additional Tools
+- Visual Studio Code for writing and editing the code.
+- Git for version control.
+- GitHub for storing and managing the project repository.
 
-- PayFast API for online payments.
-- Figma for website design.
-- Git and GitHub for version control.
+**No React.js, PHP, WordPress, WooCommerce, Node.js, Express, MySQL or external backend technologies are being used for this project.**
 
 ---
 
@@ -230,8 +224,7 @@ The proposed website requires:
 - SSL certificate.
 - 99.9% uptime.
 - At least 10GB storage.
-- Support for e-commerce.
-- Ability to handle traffic spikes.
+- Support for a static HTML, CSS and JavaScript website.
 
 The proposed domain is:
 
