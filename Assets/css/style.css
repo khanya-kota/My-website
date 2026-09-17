@@ -1,124 +1,141 @@
-/* ==========================================
-   GREEN ROOTS ORGANICS - CSS TEMPLATE
-   Edit the values below to customise the site.
-   ========================================== */
+/* Main CSS file for the Green Roots Organics website. */
+/* This file controls the shared appearance of all HTML pages. */
 
 /* ---------- 1. GENERAL SETTINGS ---------- */
+/* Applies box-sizing to every element so padding and borders are included in its size. */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Keeps element dimensions easier to control. */
 }
 
+/* Styles the root HTML element. */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Makes anchor scrolling move smoothly. */
 }
 
+/* Styles the entire page body. */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif; /* Change the font here */
-    font-size: 16px;
-    line-height: 1.7;
-    background: #f5f8f2; /* Page background */
-    color: #263326; /* Main text colour */
+    margin: 0; /* Removes the browser's default outer margin. */
+    font-family: Arial, sans-serif; /* Sets the main website font. */
+    font-size: 16px; /* Sets the default text size. */
+    line-height: 1.7; /* Adds readable spacing between lines of text. */
+    background: #f5f8f2; /* Sets the page background colour. */
+    color: #263326; /* Sets the main text colour. */
 }
 
 /* ---------- 2. HEADER ---------- */
+/* Styles the website header and the general header element. */
 .site-header,
 header {
-    background: #315c35; /* Header background */
-    color: white;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    background: #315c35; /* Sets the header background to green. */
+    color: white; /* Makes header text white. */
+    padding: 18px 8%; /* Adds space inside the header. */
+    display: flex; /* Places header items in a flexible row. */
+    justify-content: space-between; /* Separates the logo and navigation. */
+    align-items: center; /* Vertically aligns header items. */
+    flex-wrap: wrap; /* Allows items to move to another line when needed. */
+    gap: 12px; /* Adds spacing between header items. */
 }
 
+/* Styles the website logo or brand name. */
 .logo {
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.4rem; /* Sets the logo text size. */
+    font-weight: bold; /* Makes the logo text bold. */
 }
 
 /* ---------- 3. NAVIGATION ---------- */
+/* Creates a flexible navigation layout. */
 .site-nav,
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex; /* Places navigation links in a flexible row. */
+    flex-wrap: wrap; /* Allows navigation links to wrap on smaller screens. */
+    gap: 8px; /* Adds space between navigation links. */
 }
 
+/* Styles navigation links. */
 .nav-link,
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 4px;
-    padding: 6px 8px;
-    font-weight: bold;
+    color: white; /* Makes navigation text white. */
+    text-decoration: none; /* Removes the default underline. */
+    margin: 0 4px; /* Adds horizontal space around each link. */
+    padding: 6px 8px; /* Adds clickable space inside each link. */
+    font-weight: bold; /* Makes navigation text bold. */
 }
 
+/* Styles navigation links when the user hovers over or focuses on them. */
 .nav-link:hover,
 .nav-link:focus,
 nav a:hover,
 nav a:focus {
-    text-decoration: underline;
+    text-decoration: underline; /* Adds an underline for interaction feedback. */
 }
 
 /* ---------- 4. MAIN CONTENT ---------- */
+/* Styles the main content area of every page. */
 main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 35px 20px;
+    max-width: 1100px; /* Limits the width of the main content. */
+    margin: auto; /* Centres the main content horizontally. */
+    padding: 35px 20px; /* Adds space inside the main content. */
 }
 
+/* Sets the main green colour for page headings. */
 .page-title,
 h1,
 h2 {
-    color: #315c35;
+    color: #315c35; /* Applies the main green heading colour. */
 }
 
+/* Styles level-one headings. */
 h1 {
-    font-size: 2.4rem;
+    font-size: 2.4rem; /* Makes the main heading larger. */
 }
 
+/* Styles level-two headings. */
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Sets the secondary heading size. */
 }
 
+/* Styles level-three headings. */
 h3 {
-    color: #315c35;
+    color: #315c35; /* Uses green for smaller headings. */
 }
 
+/* Adds spacing above content sections. */
 .content-section,
 section {
-    margin-top: 35px;
+    margin-top: 35px; /* Creates separation between sections. */
 }
 
 /* ---------- 5. HERO SECTION ---------- */
+/* Styles the homepage hero area. */
 .hero {
-    background: #dfeedd;
-    padding: 55px 30px;
-    border-radius: 14px;
-    text-align: center;
+    background: #dfeedd; /* Gives the hero a light green background. */
+    padding: 55px 30px; /* Adds space around hero content. */
+    border-radius: 14px; /* Rounds the hero corners. */
+    text-align: center; /* Centres the hero text. */
 }
 
+/* Styles the main hero heading. */
 .hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem; /* Makes the hero heading prominent. */
+    margin-bottom: 15px; /* Adds space below the heading. */
 }
 
+/* Controls the width and spacing of hero paragraphs. */
 .hero-text {
-    max-width: 750px;
-    margin: 0 auto 20px;
+    max-width: 750px; /* Prevents text lines from becoming too wide. */
+    margin: 0 auto 20px; /* Centres the text and adds bottom spacing. */
 }
 
 /* ---------- 6. CARDS ---------- */
+/* Creates a responsive grid for cards and products. */
 .cards,
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    display: grid; /* Changes the container into a grid. */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Automatically creates responsive columns. */
+    gap: 20px; /* Adds space between grid items. */
 }
 
+/* Styles common card, product, information and form containers. */
 .card,
 .feature-card,
 .product,
@@ -129,155 +146,179 @@ article,
 .intro,
 .info,
 form {
-    background: white;
-    padding: 22px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: white; /* Gives content containers a white background. */
+    padding: 22px; /* Adds internal spacing. */
+    border-radius: 10px; /* Rounds the container corners. */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Adds a subtle shadow. */
 }
 
+/* Adds a small movement effect when cards are hovered over. */
 .card:hover,
 .feature-card:hover,
 .product:hover,
 .product-card:hover {
-    transform: translateY(-2px);
-    transition: 0.2s ease;
+    transform: translateY(-2px); /* Moves the card slightly upward. */
+    transition: 0.2s ease; /* Makes the movement smooth. */
 }
 
 /* ---------- 7. HIGHLIGHT / TIP BOXES ---------- */
+/* Styles highlighted information and tip areas. */
 .highlight,
 .tip {
-    background: #dfeedd;
-    padding: 20px;
-    border-radius: 8px;
+    background: #dfeedd; /* Uses a light green background. */
+    padding: 20px; /* Adds internal spacing. */
+    border-radius: 8px; /* Rounds the box corners. */
 }
 
+/* Adds a green accent border to highlighted boxes. */
 .highlight {
-    border-left: 5px solid #315c35;
+    border-left: 5px solid #315c35; /* Creates a left-side green border. */
 }
 
 /* ---------- 8. BUTTONS ---------- */
+/* Styles links and buttons used as calls to action. */
 .button,
 .btn,
 button {
-    display: inline-block;
-    background: #315c35;
-    color: white;
-    padding: 11px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    border: 0;
-    cursor: pointer;
-    font: inherit;
-    font-weight: bold;
+    display: inline-block; /* Allows links to behave like button blocks. */
+    background: #315c35; /* Sets the button background colour. */
+    color: white; /* Sets the button text colour. */
+    padding: 11px 20px; /* Adds space inside the button. */
+    border-radius: 6px; /* Rounds the button corners. */
+    text-decoration: none; /* Removes link underlining. */
+    border: 0; /* Removes the default button border. */
+    cursor: pointer; /* Shows a pointer when hovering over the button. */
+    font: inherit; /* Uses the same font as the surrounding content. */
+    font-weight: bold; /* Makes button text bold. */
 }
 
+/* Changes button colour when the user hovers over it. */
 .button:hover,
 .btn:hover,
 button:hover {
-    background: #244629;
+    background: #244629; /* Uses a darker green on hover. */
 }
 
 /* ---------- 9. FORMS ---------- */
+/* Adds spacing between form fields. */
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 18px; /* Separates each form group. */
 }
 
+/* Styles form labels. */
 label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
+    display: block; /* Places each label on its own line. */
+    margin-top: 15px; /* Adds space above the label. */
+    font-weight: bold; /* Makes labels easier to identify. */
 }
 
+/* Styles text fields, dropdowns and text areas. */
 input,
 select,
 textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    font: inherit;
-    background: white;
+    width: 100%; /* Makes controls fill the available width. */
+    padding: 12px; /* Adds internal space for easier typing. */
+    margin-top: 6px; /* Adds space between labels and controls. */
+    border: 1px solid #aaa; /* Adds a light border around controls. */
+    border-radius: 5px; /* Slightly rounds the control corners. */
+    font: inherit; /* Uses the page's font. */
+    background: white; /* Gives form controls a white background. */
 }
 
+/* Highlights a form control when it receives keyboard or mouse focus. */
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 2px solid #315c35;
-    border-color: #315c35;
+    outline: 2px solid #315c35; /* Shows a visible green focus outline. */
+    border-color: #315c35; /* Changes the border to green. */
 }
 
+/* Controls the default size and resizing behaviour of text areas. */
 textarea {
-    min-height: 140px;
-    resize: vertical;
+    min-height: 140px; /* Gives the message area a useful starting height. */
+    resize: vertical; /* Allows users to resize it vertically. */
 }
 
 /* ---------- 10. LISTS ---------- */
+/* Adds indentation to unordered and ordered lists. */
 ul,
 ol {
-    padding-left: 25px;
+    padding-left: 25px; /* Creates space for list markers. */
 }
 
+/* Adds spacing between list items. */
 li {
-    margin-bottom: 6px;
+    margin-bottom: 6px; /* Improves readability between list items. */
 }
 
 /* ---------- 11. FOOTER ---------- */
+/* Styles the website footer. */
 .site-footer,
 footer {
-    text-align: center;
-    padding: 25px;
-    background: #263326;
-    color: white;
-    margin-top: 30px;
+    text-align: center; /* Centres footer content. */
+    padding: 25px; /* Adds space inside the footer. */
+    background: #263326; /* Sets a dark green footer background. */
+    color: white; /* Makes footer text white. */
+    margin-top: 30px; /* Adds space above the footer. */
 }
 
 /* ---------- 12. RESPONSIVE DESIGN ---------- */
+/* Applies these styles when the screen is 700px wide or smaller. */
 @media (max-width: 700px) {
+    /* Adjusts the header for mobile screens. */
     .site-header,
     header {
-        padding: 18px 5%;
-        flex-direction: column;
-        text-align: center;
+        padding: 18px 5%; /* Reduces horizontal header padding. */
+        flex-direction: column; /* Stacks header items vertically. */
+        text-align: center; /* Centres the header content. */
     }
 
+    /* Centres the navigation links on mobile screens. */
     .site-nav,
     nav {
-        justify-content: center;
+        justify-content: center; /* Centres navigation items. */
     }
 
+    /* Makes navigation links easier to tap on small screens. */
     .nav-link,
     nav a {
-        display: inline-block;
-        margin: 4px;
+        display: inline-block; /* Allows links to have padding and margins. */
+        margin: 4px; /* Adds space around mobile navigation links. */
     }
 
+    /* Reduces hero padding on small screens. */
     .hero {
-        padding: 40px 20px;
+        padding: 40px 20px; /* Uses smaller spacing on mobile. */
     }
 
+    /* Reduces the main heading size on small screens. */
     .hero-title,
     h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Makes headings fit better on mobile screens. */
     }
 
+    /* Reduces secondary heading size on small screens. */
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Makes secondary headings more compact. */
     }
 }
 
 /* ---------- 13. CUSTOMISE HERE ---------- */
-/*
-   Change these examples to experiment with your design:
+/* Use the examples below to change the appearance of the website. */
+/* Main page background colour. */
+/* background: #f5f8f2; */
+/* Main green colour. */
+/* #315c35; */
+/* Dark green colour. */
+/* #244629; */
+/* Light green colour. */
+/* #dfeedd; */
+/* White colour. */
+/* #ffffff; */
 
-   Background: #f5f8f2
-   Main green: #315c35
-   Dark green: #244629
-   Light green: #dfeedd
-   White: #ffffff
-
-   Example:
-   body { background: #ffffff; }
-   .logo { font-size: 1.6rem; }
-   h1 { font-size: 3rem; }
-*/
+/* Example of changing the page background. */
+/* body { background: #ffffff; } */
+/* Example of changing the logo size. */
+/* .logo { font-size: 1.6rem; } */
+/* Example of changing the main heading size. */
+/* h1 { font-size: 3rem; } */
