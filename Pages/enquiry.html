@@ -1,26 +1,102 @@
+<!-- Declares this document as HTML5. -->
 <!DOCTYPE html>
+<!-- Starts the HTML document and sets the language to English. -->
 <html lang="en">
+<!-- Starts the document head. -->
 <head>
+    <!-- Sets the character encoding to UTF-8. -->
     <meta charset="UTF-8">
+    <!-- Enables responsive design on different devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Describes the Enquiry page for search engines. -->
     <meta name="description" content="Contact Green Roots Organics for product, subscription, delivery and quotation enquiries.">
+    <!-- Sets the browser tab title. -->
     <title>Green Roots Organics | Enquiry</title>
+    <!-- Links this page to the shared CSS stylesheet. -->
     <link rel="stylesheet" href="../Assets/css/style.css">
+<!-- Ends the head section. -->
 </head>
+<!-- Starts the visible body and identifies the Enquiry page for CSS. -->
 <body class="enquiry-page">
-<header class="site-header"><div class="logo">Green Roots Organics</div><nav class="site-nav" aria-label="Main navigation"><a class="nav-link" href="../index.html">Home</a><a class="nav-link" href="about.html">About</a><a class="nav-link" href="descriptive.html">Products</a><a class="nav-link" href="context.html">Information</a><a class="nav-link active" href="enquiry.html">Enquiry</a></nav></header>
+<!-- Starts the website header. -->
+<header class="site-header">
+    <!-- Displays the website logo. -->
+    <div class="logo">Green Roots Organics</div>
+    <!-- Starts the main navigation menu. -->
+    <nav class="site-nav" aria-label="Main navigation">
+        <!-- Links to the homepage. -->
+        <a class="nav-link" href="../index.html">Home</a>
+        <!-- Links to the About page. -->
+        <a class="nav-link" href="about.html">About</a>
+        <!-- Links to the Products page. -->
+        <a class="nav-link" href="descriptive.html">Products</a>
+        <!-- Links to the Information page. -->
+        <a class="nav-link" href="context.html">Information</a>
+        <!-- Links to the current Enquiry page and marks it active. -->
+        <a class="nav-link active" href="enquiry.html">Enquiry</a>
+    <!-- Ends the navigation menu. -->
+    </nav>
+<!-- Ends the website header. -->
+</header>
+<!-- Starts the main Enquiry page content. -->
 <main class="site-main enquiry-main">
-    <section class="enquiry-intro"><h1 class="page-title">Contact & Enquiry</h1><div class="intro enquiry-intro-box"><p>Have a question about our organic fruit, vegetables, subscription boxes or delivery service? Complete the form below and provide as much detail as possible so that we can understand your request.</p><p>For subscription enquiries, please mention whether you are interested in a weekly or bi-weekly box and include any useful delivery information.</p></div></section>
-    <section class="info enquiry-info"><h2>What You Can Ask About</h2><ul class="enquiry-list"><li>Current fruit and vegetable availability</li><li>Weekly and bi-weekly produce subscriptions</li><li>Delivery areas and scheduling</li><li>Product quantities and quote requests</li><li>General questions about Green Roots Organics</li></ul></section>
-    <section class="form-section"><form class="enquiry-form" action="#" method="post">
-        <div class="form-group"><label for="name">Full Name</label><input class="form-control" type="text" id="name" name="name" placeholder="Enter your full name" required></div>
-        <div class="form-group"><label for="email">Email Address</label><input class="form-control" type="email" id="email" name="email" placeholder="Enter your email address" required></div>
-        <div class="form-group"><label for="phone">Phone Number</label><input class="form-control" type="tel" id="phone" name="phone" placeholder="Enter your phone number"></div>
-        <div class="form-group"><label for="enquiry">Enquiry Type</label><select class="form-control" id="enquiry" name="enquiry" required><option value="">Select an option</option><option value="products">Products</option><option value="subscription">Subscription</option><option value="delivery">Delivery</option><option value="quote">Quote Request</option><option value="general">General Information</option><option value="other">Other</option></select></div>
-        <div class="form-group"><label for="message">Message</label><textarea class="form-control message-field" id="message" name="message" placeholder="Write your enquiry here..." required></textarea></div>
-        <button class="submit-button" type="submit">Submit Enquiry</button>
-    </form></section>
+    <!-- Starts the enquiry introduction section. -->
+    <section class="enquiry-intro">
+        <!-- Displays the main enquiry heading. -->
+        <h1 class="page-title">Contact & Enquiry</h1>
+        <!-- Provides instructions before the form. -->
+        <div class="intro enquiry-intro-box"><p>Have a question about our organic fruit, vegetables, subscription boxes or delivery service? Complete the form below and provide as much detail as possible so that we can understand your request.</p><p>For subscription enquiries, please mention whether you are interested in a weekly or bi-weekly box and include any useful delivery information.</p></div>
+    <!-- Ends the introduction section. -->
+    </section>
+    <!-- Starts the list of enquiry topics. -->
+    <section class="info enquiry-info">
+        <!-- Displays the enquiry topics heading. -->
+        <h2>What You Can Ask About</h2>
+        <!-- Creates a list of possible enquiry subjects. -->
+        <ul class="enquiry-list">
+            <!-- Lists product availability enquiries. -->
+            <li>Current fruit and vegetable availability</li>
+            <!-- Lists subscription enquiries. -->
+            <li>Weekly and bi-weekly produce subscriptions</li>
+            <!-- Lists delivery enquiries. -->
+            <li>Delivery areas and scheduling</li>
+            <!-- Lists quotation enquiries. -->
+            <li>Product quantities and quote requests</li>
+            <!-- Lists general information enquiries. -->
+            <li>General questions about Green Roots Organics</li>
+        <!-- Ends the enquiry list. -->
+        </ul>
+    <!-- Ends the information section. -->
+    </section>
+    <!-- Starts the form section. -->
+    <section class="form-section">
+        <!-- Creates the enquiry form and sends it using POST. -->
+        <form class="enquiry-form" action="#" method="post">
+            <!-- Creates the full name form group. -->
+            <div class="form-group"><label for="name">Full Name</label><input class="form-control" type="text" id="name" name="name" placeholder="Enter your full name" required></div>
+            <!-- Creates the email address form group. -->
+            <div class="form-group"><label for="email">Email Address</label><input class="form-control" type="email" id="email" name="email" placeholder="Enter your email address" required></div>
+            <!-- Creates the phone number form group. -->
+            <div class="form-group"><label for="phone">Phone Number</label><input class="form-control" type="tel" id="phone" name="phone" placeholder="Enter your phone number"></div>
+            <!-- Creates the enquiry type selection group. -->
+            <div class="form-group"><label for="enquiry">Enquiry Type</label><select class="form-control" id="enquiry" name="enquiry" required><option value="">Select an option</option><option value="products">Products</option><option value="subscription">Subscription</option><option value="delivery">Delivery</option><option value="quote">Quote Request</option><option value="general">General Information</option><option value="other">Other</option></select></div>
+            <!-- Creates the message input group. -->
+            <div class="form-group"><label for="message">Message</label><textarea class="form-control message-field" id="message" name="message" placeholder="Write your enquiry here..." required></textarea></div>
+            <!-- Creates the button used to submit the enquiry form. -->
+            <button class="submit-button" type="submit">Submit Enquiry</button>
+        <!-- Ends the enquiry form. -->
+        </form>
+    <!-- Ends the form section. -->
+    </section>
+<!-- Ends the main content. -->
 </main>
-<footer class="site-footer"><p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p></footer>
+<!-- Starts the website footer. -->
+<footer class="site-footer">
+    <!-- Displays the copyright information. -->
+    <p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p>
+<!-- Ends the footer. -->
+</footer>
+<!-- Ends the body. -->
 </body>
+<!-- Ends the HTML document. -->
 </html>
