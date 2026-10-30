@@ -40,7 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
  if(enquiryForm){
   const product=new URLSearchParams(window.location.search).get("product");
   if(product){const message=enquiryForm.querySelector("#message");if(message)message.value="I would like to enquire about "+product+". ";}
-  enquiryForm.addEventListener("submit",event=>{event.preventDefault();const feedback=document.querySelector("#enquiry-feedback");if(!enquiryForm.reportValidity())return;if(feedback)feedback.textContent="Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";enquiryForm.reset();});
+  enquiryForm.addEventListener("submit",event=>{
+   event.preventDefault();
+   const feedback=document.querySelector("#enquiry-feedback");
+   if(!enquiryForm.checkValidity()){
+    if(feedback)feedback.textContent="Please complete the required fields using the correct details.";
+    return;
+   }
+   if(feedback)feedback.textContent="Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
+   enquiryForm.reset();
+  });
  }
  const contactForm=document.querySelector("#contact-form");
  if(contactForm){
