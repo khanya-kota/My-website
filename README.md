@@ -305,73 +305,107 @@ All HTML pages are connected to the shared stylesheet at `Assets/css/style.css`.
 
 ---
 
-## 14. Part 3: Functionality, Validation, SEO and Publishing
 
-The Part 3 enhancements follow the WEDE5020 POE Part 3 Requirements Guide and use HTML5, CSS3 and vanilla JavaScript.
+## 14. Part 3: Implementation, Validation, SEO and Publishing
 
-### JavaScript functionality
-- Responsive navigation that closes after a visitor selects a page.
-- Product catalogue keyword search, category filtering and A–Z / Z–A sorting with a live result count and empty-results message.
-- Site-wide image lightbox: click or keyboard-activate an image to enlarge it; use previous/next controls or arrow keys to browse; close with the close button, backdrop or Escape key.
-- Custom JavaScript validation for the Enquiry and Contact forms. Error messages appear beside the relevant field, invalid fields receive an accessible state, and users are moved to the first invalid field.
-- The Enquiry form gives a product-specific response and explains that stock, pricing and delivery must be confirmed.
-- The Contact form validates a general message and prepares a mailto email when the recipient address is configured.
+This project uses HTML5, CSS3 and vanilla JavaScript. Part 3 work is organised around the guide's workflow: improve, enhance, optimise, validate, document, commit and publish.
 
-### Forms and validation
-- HTML browser validation attributes and native validation bubbles have been removed as requested. The shared JavaScript sets `noValidate` and performs the checks.
-- The Enquiry form is for product, subscription, quantity and delivery-area requests.
-- The Contact form is for general questions, feedback and partnership communication; its phone number is optional.
-- This is a static GitHub Pages website. The Enquiry form displays a client-side response; it does not store submissions on a server.
-- **Before final submission:** replace `YOUR_BUSINESS_EMAIL@example.com` in `Assets/js/script.js` with the real organisation email address. Without this, the Contact form can validate the message but cannot prepare it for the correct recipient. No business email address was supplied for this update.
+### 14.1 Improvements and JavaScript
+- Shared responsive layout and consistent spacing, typography, cards and forms across Home, About, Information, Products, Enquiry and Contact.
+- Responsive navigation with a mobile menu that closes after a visitor selects a page.
+- Product catalogue with keyword search, category filters, A–Z / Z–A sorting, live result count and a no-results message.
+- Twelve seasonal product cards with illustrative images, descriptions, categories and enquiry links.
+- Image lightbox on meaningful images in the main content. JavaScript creates the lightbox on pages without static markup. It supports keyboard activation, previous/next, Escape and backdrop closing.
+- FAQ accordion on the About page using details/summary.
+- CSS transitions, visible keyboard focus and reduced-motion support.
 
-### Search and image gallery
-- Product search checks product names and card content.
-- Category buttons filter fruit, vegetables and produce boxes.
-- Sorting supports featured order, A–Z and Z–A.
-- All meaningful images inside page content can be opened in the responsive lightbox. Images retain descriptive alt text; keyboard users can open images and browse with the arrow keys.
+### 14.2 Forms
+- Enquiry form: product, subscription, quantity and delivery-area questions.
+- Contact form: general messages, feedback and partnership communication. Phone is optional.
+- Both forms use HTML5 constraints (required, email type, length and pattern constraints where appropriate) plus JavaScript validation.
+- JavaScript reads the HTML5 Validity API and displays field-level feedback. The form noValidate setting prevents browser pop-up bubbles while custom validation runs.
+- Invalid fields are marked with aria-invalid and focus moves to the first invalid field.
+- Enquiry displays a client-side response explaining that stock, prices and delivery must be confirmed.
+- Contact prepares an email only after the business recipient is configured.
+- This is a static site. It does not store submissions on a server or send them to a database.
 
-### SEO, accessibility and responsive quality
+**Configuration still required:** Replace the business email placeholder in Assets/js/script.js with the organisation's actual email address. No recipient address was supplied.
+
+### 14.3 SEO and accessibility
 - Unique page titles, meta descriptions and page-specific keywords.
-- Descriptive image alt text, labelled form controls and meaningful heading structure.
-- Responsive product search controls, navigation, cards, forms and lightbox.
-- Visible keyboard focus, accessible status/error messages and Escape-key lightbox closing.
-- Images use lazy loading where appropriate and CSS constrains their display size.
+- Open Graph site name, title, description and theme colour.
+- Descriptive image alt text and lazy loading for content images.
+- Associated form labels and accessible validation/status feedback.
+- Responsive navigation, catalogue, forms and lightbox.
+- Visible focus styles and reduced-motion support.
 
-### Part 3 files
+### 14.4 Catalogue and images
+- Search checks product names and visible product-card text.
+- Filters include fruit, vegetables and produce boxes.
+- Sorting supports featured/default order, A–Z and Z–A.
+- Product photos are illustrative and do not guarantee current stock or exact contents. Confirm availability and prices through an enquiry.
+
+### 14.5 Project files
 | File | Purpose |
 |---|---|
-| `Assets/js/script.js` | Navigation, catalogue search/filter/sort, site-wide image lightbox and JavaScript form validation |
-| `Assets/css/style.css` | Shared styling, responsive search controls, field errors and lightbox |
-| `Pages/descriptive.html` | Product catalogue, search, category filters, sorting and product enquiries |
-| `Pages/enquiry.html` | Product, subscription and delivery enquiry form |
-| `Pages/contact.html` | General contact form and location information |
+| index.html | Home page |
+| Pages/about.html | About and FAQ |
+| Pages/context.html | Organic living and produce information |
+| Pages/descriptive.html | Product catalogue and search |
+| Pages/enquiry.html | Product enquiry form |
+| Pages/contact.html | General contact form and location |
+| Assets/css/style.css | Shared responsive styles |
+| Assets/js/script.js | Navigation, search, filters, lightbox and form validation |
 
-### Testing checklist
-- [ ] Test every navigation link on all pages.
-- [ ] Test the mobile menu and confirm it closes after navigation.
-- [ ] Search for products using full and partial keywords.
-- [ ] Test every product category filter, A–Z and Z–A sorting, and no-results behaviour.
-- [ ] Open images on the Home, About, Information and Products pages; test close, backdrop, Escape, previous/next and keyboard access.
-- [ ] Submit both forms empty and confirm each required field displays its own message.
-- [ ] Test invalid email, invalid phone, short message and corrected valid values.
-- [ ] Confirm the Enquiry form displays its availability/pricing response.
-- [ ] Configure the real business email and test the Contact mailto workflow.
-- [ ] Test desktop and mobile widths, images, map, CSS and JavaScript on the deployed site.
-- [ ] Verify the live website in a private/incognito browser window after GitHub Pages publishes.
+### 14.6 Run and deploy
+1. Clone or download this repository.
+2. Open the folder in Visual Studio Code.
+3. Open index.html in a browser or use Live Server.
+4. Keep the existing folder structure so relative links work.
+5. Commit and push changes to the GitHub repository.
+6. Check repository Settings → Pages to confirm the publishing branch and folder.
+7. Open the published site in a private/incognito window and retest links, images, forms, JavaScript and mobile layout.
 
-### Part 3 changelog
-| Version | Area | Issue / change | Reason / result |
+Repository: https://github.com/khanya-kota/My-website  
+Live website: https://khanya-kota.github.io/My-website/
+
+### 14.7 Testing and evidence checklist
+| Area | Test | Expected result |
+|---|---|---|
+| Navigation | Visit all pages; test mobile menu | Correct page opens; menu closes |
+| Search | Search full and partial product names | Matching products appear |
+| Filters | Test each category and All products | Correct products remain visible |
+| Sorting | Test A–Z and Z–A | Product order changes |
+| Empty state | Search for a non-matching word | No-results message appears |
+| Lightbox | Test click, keyboard, arrows, backdrop and Escape | Image opens, navigates and closes |
+| Enquiry | Submit empty, invalid and valid values | Field errors and enquiry response appear |
+| Contact | Submit empty, invalid and valid values | Field errors appear; email is prepared after recipient setup |
+| SEO | Inspect titles, descriptions, keywords, headings and alt text | Each page has relevant metadata |
+| Responsive | Test desktop and mobile widths | No major overflow |
+| Deployment | Open live URL privately | CSS, JS, links, images and map work |
+| GitHub | Inspect branch, files and commits | Latest project and README are present |
+
+Do not mark a test as passed until it has been tested in the browser. Capture genuine screenshots for LMS evidence.
+
+### 14.8 Part 3 changelog
+| Version | Area | Improvement | Result |
 |---|---|---|---|
-| v3.1 | Products | Added product images, descriptive alt text and enquiry links | Makes the product range easier to understand |
-| v3.2 | Search | Added keyword search, category filters, sorting and live result feedback | Helps visitors find relevant produce |
-| v3.3 | Gallery | Added a responsive lightbox with keyboard navigation and close controls across all content pages | Allows larger image previews without leaving the page |
-| v3.4 | Forms | Replaced browser-native validation with field-level JavaScript validation | Shows clear messages beside the relevant fields |
-| v3.5 | Enquiry | Added product-specific enquiry feedback and prefilled product details from catalogue links | Connects product browsing to the enquiry journey |
-| v3.6 | Contact | Kept general contact separate and added JavaScript validation plus email preparation | Supports general communication; recipient configuration remains required |
-| v3.7 | Responsive design | Improved search/filter layout and mobile controls | Makes catalogue tools easier to use on smaller screens |
-| v3.8 | Documentation | Updated Part 3 feature notes, testing checklist and requirements traceability | Helps the assessor locate and verify the implemented features |
+| v3.1 | Catalogue | Added product cards, images and enquiry links | Clearer product presentation |
+| v3.2 | Search | Added keyword search, category filters, sorting and result feedback | Easier product discovery |
+| v3.3 | Gallery | Added responsive lightbox and keyboard controls | Larger image previews |
+| v3.4 | Forms | Added HTML5 constraints and JavaScript field validation | Clear, accessible field errors |
+| v3.5 | Enquiry | Added product prefill and availability response | Better product enquiry journey |
+| v3.6 | Contact | Kept general contact separate and added email preparation | Supports general communication |
+| v3.7 | Responsive | Refined shared spacing, cards, search and mobile breakpoints | More consistent layouts |
+| v3.8 | SEO | Added page metadata and Open Graph tags | Better page descriptions and link previews |
+| v3.9 | Documentation | Added run/deploy instructions and testing checklist | Easier assessment and handover |
 
-### References
-- WEDE5020 POE Part 3 Requirements, Implementation & Evidence Guide (course guide supplied for this project).
-- Unsplash: https://unsplash.com/ (illustrative product photographs).
+### 14.9 Part 2 feedback status
+No Part 2 lecturer feedback was supplied for this update. No specific feedback correction is claimed. If feedback is later provided, record the exact issue, code change, reason and retest result here.
+
+### 14.10 References
+- WEDE5020 POE Part 3 Requirements, Implementation & Evidence Guide (student-provided course guide).
+- Unsplash: https://unsplash.com/ (illustrative produce photographs).
+- GitHub Pages: https://docs.github.com/en/pages (static website publishing).
+- MDN Web Docs: https://developer.mozilla.org/ (HTML forms, JavaScript and accessibility).
 - OpenStreetMap: https://www.openstreetmap.org/ (map reference).
