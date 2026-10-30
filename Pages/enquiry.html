@@ -14,6 +14,7 @@
     <title>Green Roots Organics | Enquiry</title>
     <!-- Links this page to the shared CSS stylesheet. -->
     <link rel="stylesheet" href="../Assets/css/style.css">
+    <script src="../Assets/js/script.js" defer></script>
 <!-- Ends the head section. -->
 </head>
 <!-- Starts the visible body and identifies the Enquiry page for CSS. -->
@@ -23,7 +24,8 @@
     <!-- Displays the website logo. -->
     <div class="logo">Green Roots Organics</div>
     <!-- Starts the main navigation menu. -->
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
         <!-- Links to the homepage. -->
         <a class="nav-link" href="../index.html">Home</a>
         <!-- Links to the About page. -->
@@ -33,7 +35,8 @@
         <!-- Links to the Information page. -->
         <a class="nav-link" href="context.html">Information</a>
         <!-- Links to the current Enquiry page and marks it active. -->
-        <a class="nav-link active" href="enquiry.html">Enquiry</a>
+        <a class="nav-link active" href="enquiry.html" aria-current="page">Enquiry</a>
+        <a class="nav-link" href="contact.html">Contact</a>
     <!-- Ends the navigation menu. -->
     </nav>
 <!-- Ends the website header. -->
@@ -71,21 +74,16 @@
     <!-- Starts the form section. -->
     <section class="form-section">
         <!-- Creates the enquiry form and sends it using POST. -->
-        <form class="enquiry-form" action="#" method="post">
-            <!-- Creates the full name form group. -->
-            <div class="form-group"><label for="name">Full Name</label><input class="form-control" type="text" id="name" name="name" placeholder="Enter your full name" required></div>
-            <!-- Creates the email address form group. -->
-            <div class="form-group"><label for="email">Email Address</label><input class="form-control" type="email" id="email" name="email" placeholder="Enter your email address" required></div>
-            <!-- Creates the phone number form group. -->
-            <div class="form-group"><label for="phone">Phone Number</label><input class="form-control" type="tel" id="phone" name="phone" placeholder="Enter your phone number"></div>
-            <!-- Creates the enquiry type selection group. -->
-            <div class="form-group"><label for="enquiry">Enquiry Type</label><select class="form-control" id="enquiry" name="enquiry" required><option value="">Select an option</option><option value="products">Products</option><option value="subscription">Subscription</option><option value="delivery">Delivery</option><option value="quote">Quote Request</option><option value="general">General Information</option><option value="other">Other</option></select></div>
-            <!-- Creates the message input group. -->
-            <div class="form-group"><label for="message">Message</label><textarea class="form-control message-field" id="message" name="message" placeholder="Write your enquiry here..." required></textarea></div>
-            <!-- Creates the button used to submit the enquiry form. -->
-            <button class="submit-button" type="submit">Submit Enquiry</button>
-        <!-- Ends the enquiry form. -->
-        </form>
+        <form class="enquiry-form" id="enquiry-form" action="#" method="post">
+<p>Complete this form to ask about a product, subscription or delivery. We will confirm current stock, prices and delivery arrangements.</p>
+<div class="form-group"><label for="name">Full name</label><input class="form-control" type="text" id="name" name="name" minlength="2" maxlength="80" autocomplete="name" required></div>
+<div class="form-group"><label for="email">Email address</label><input class="form-control" type="email" id="email" name="email" maxlength="120" autocomplete="email" required></div>
+<div class="form-group"><label for="phone">Phone number</label><input class="form-control" type="tel" id="phone" name="phone" pattern="[0-9+() -]{7,20}" title="Enter a valid phone number using 7 to 20 digits or phone symbols." autocomplete="tel" required></div>
+<div class="form-group"><label for="enquiry">What are you enquiring about?</label><select class="form-control" id="enquiry" name="enquiry" required><option value="">Choose an option</option><option>Fresh fruit</option><option>Fresh vegetables</option><option>Weekly produce box</option><option>Bi-weekly produce box</option><option>Delivery</option><option>Bulk or business order</option><option>Other</option></select></div>
+<div class="form-group"><label for="quantity">Preferred quantity or box size (optional)</label><input class="form-control" type="text" id="quantity" name="quantity" maxlength="100" placeholder="For example, one family box"></div>
+<div class="form-group"><label for="area">Delivery area / suburb</label><input class="form-control" type="text" id="area" name="area" maxlength="100" placeholder="Enter your area" required></div>
+<div class="form-group"><label for="message">Your enquiry</label><textarea class="form-control message-field" id="message" name="message" minlength="10" maxlength="1000" placeholder="Tell us what produce you are interested in..." required></textarea></div>
+<button class="submit-button" type="submit">Submit product enquiry</button><p class="form-feedback" id="enquiry-feedback" role="status" aria-live="polite"></p></form>
     <!-- Ends the form section. -->
     </section>
 <!-- Ends the main content. -->
@@ -94,6 +92,7 @@
 <footer class="site-footer">
     <!-- Displays the copyright information. -->
     <p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p>
+    <p><a href="contact.html">General contact form</a></p>
 <!-- Ends the footer. -->
 </footer>
 <!-- Ends the body. -->
