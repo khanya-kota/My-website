@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const field = form.querySelector(definition.selector);
       if (!field) return;
       const value = field.value.trim();
-      let message = value ? "" : "Please complete this field.";
+      let message = value ? "" : "Please complete this field.";\n      if (!message && field.checkValidity && !field.checkValidity()) {\n        message = field.validity.typeMismatch ? "Please enter a valid email address." :\n          field.validity.tooShort ? "Please enter more characters." :\n          field.validity.tooLong ? "Please shorten this entry." :\n          field.validity.patternMismatch ? "Please use the requested format." : "Please check this field.";\n      }
       if (value && definition.validate && !definition.validate(value)) message = definition.error;
       if (message && !firstInvalid) firstInvalid = field;
       setFieldError(form, field, message);
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Product enquiry: collect product, quantity and delivery details and give a relevant response.
   const enquiryForm = document.querySelector("#enquiry-form");
   if (enquiryForm) {
-    enquiryForm.noValidate = true;
+    enquiryForm.noValidate = true; // Keep browser pop-ups off; HTML5 constraints are checked through the Validity API below.
     const productFromLink = new URLSearchParams(window.location.search).get("product");
     const enquiryMessage = enquiryForm.querySelector("#message");
     if (productFromLink && enquiryMessage && !enquiryMessage.value) {
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // General contact: prepare a message for the organisation's configured email recipient.
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
-    contactForm.noValidate = true;
+    contactForm.noValidate = true; // Keep browser pop-ups off; HTML5 constraints are checked through the Validity API below.
     const contactDefinitions = [
       { selector: "#contact-name" },
       { selector: "#contact-email", validate: validEmail, error: "Please enter a valid email address." },
