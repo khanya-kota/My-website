@@ -13,7 +13,9 @@
     <!-- Sets the text displayed in the browser tab. -->
     <title>Green Roots Organics | Home</title>
     <!-- Connects this page to the shared CSS stylesheet. -->
+    <meta name="keywords" content="fresh organic fruit, vegetables, produce boxes, South Africa, Green Roots Organics">
     <link rel="stylesheet" href="Assets/css/style.css">
+    <script src="Assets/js/script.js" defer></script>
 <!-- Ends the head section. -->
 </head>
 <!-- Starts the visible body and identifies it as the homepage for CSS styling. -->
@@ -23,7 +25,8 @@
     <!-- Displays the website logo or brand name. -->
     <div class="logo">Green Roots Organics</div>
     <!-- Starts the main navigation menu. -->
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
         <!-- Links to the homepage and marks it as the active page. -->
         <a class="nav-link active" href="index.html">Home</a>
         <!-- Links to the About page. -->
@@ -34,6 +37,7 @@
         <a class="nav-link" href="Pages/context.html">Information</a>
         <!-- Links to the Enquiry page. -->
         <a class="nav-link" href="Pages/enquiry.html">Enquiry</a>
+        <a class="nav-link" href="Pages/contact.html">Contact</a>
     <!-- Ends the navigation menu. -->
     </nav>
 <!-- Ends the website header. -->
@@ -71,6 +75,7 @@
     <!-- Ends the features section. -->
     </section>
     <!-- Starts the featured categories section. -->
+    <section class="content-section home-products"><h2 class="section-title">A taste of what we offer</h2><p class="section-text">Explore seasonal fruit, fresh vegetables and convenient produce boxes.</p><div class="home-product-grid"><a class="home-product" href="Pages/descriptive.html"><img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=900&q=80" alt="Fresh seasonal fruit" loading="lazy"><span>Fresh fruit</span></a><a class="home-product" href="Pages/descriptive.html"><img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=900&q=80" alt="Fresh vegetables" loading="lazy"><span>Fresh vegetables</span></a><a class="home-product" href="Pages/descriptive.html"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="A box of fresh produce" loading="lazy"><span>Produce boxes</span></a></div><a class="button" href="Pages/descriptive.html">View all products</a></section>
     <section class="content-section categories-section">
         <!-- Displays the categories heading. -->
         <h2 class="section-title">Our Featured Categories</h2>
@@ -118,6 +123,7 @@
 <footer class="site-footer">
     <!-- Displays the copyright notice. -->
     <p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p>
+    <p><a href="Pages/contact.html">Contact us</a> · <a href="Pages/enquiry.html">Product enquiries</a></p>
 <!-- Ends the footer. -->
 </footer>
 <!-- Ends the body of the page. -->
