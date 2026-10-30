@@ -38,12 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
  document.addEventListener("keydown",event=>{if(event.key==="Escape"&&lightbox&&!lightbox.hidden)hideLightbox();});
  const enquiryForm=document.querySelector("#enquiry-form");
  if(enquiryForm){
-  // Disable browser validation bubbles; validation messages are shown inside the page.
   enquiryForm.noValidate=true;
   const product=new URLSearchParams(window.location.search).get("product");
   if(product){const message=enquiryForm.querySelector("#message");if(message)message.value="I would like to enquire about "+product+". ";}
-  enquiryForm.addEventListener("submit",event=>{
-   event.preventDefault();
+  const validateEnquiry=()=>{
    const feedback=document.querySelector("#enquiry-feedback");
    const name=enquiryForm.querySelector("#name").value.trim();
    const email=enquiryForm.querySelector("#email").value.trim();
@@ -52,22 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
    const area=enquiryForm.querySelector("#area").value.trim();
    const message=enquiryForm.querySelector("#message").value.trim();
    let error="";
-   if(!name||!email||!phone||!enquiry||!area||!message){
-    error="Please complete all required fields.";
-   }else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    error="Please enter a valid email address.";
-   }else if(!/^[0-9+() -]{7,20}$/.test(phone)){
-    error="Please enter a valid phone number.";
-   }else if(message.length<10){
-    error="Please enter at least 10 characters in your enquiry.";
-   }
-   if(error){
-    if(feedback)feedback.textContent=error;
-    return;
-   }
-   if(feedback)feedback.textContent="Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
-   enquiryForm.reset();
-  });
+   if(!name||!email||!phone||!enquiry||!area||!message) error="Please complete all required fields.";
+   else if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) error="Please enter a valid email address.";
+   else if(!/^[0-9+() -]{7,20}$/.test(phone)) error="Please enter a valid phone number.";
+   else if(message.length<10) error="Please enter at least 10 characters in your enquiry.";
+   if(feedback) feedback.textContent=error||"Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
+   if(!error) enquiryForm.reset();
+  };
+  enquiryForm.addEventListener("submit",event=>event.preventDefault());
+  enquiryForm.querySelector(".submit-button")?.addEventListener("click",event=>{event.preventDefault();validateEnquiry();});
  }
  const contactForm=document.querySelector("#contact-form");
  if(contactForm){
