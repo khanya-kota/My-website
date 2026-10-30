@@ -202,7 +202,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const field = form.querySelector(definition.selector);
       if (!field) return;
       const value = field.value.trim();
-      let message = value ? "" : "Please complete this field.";\n      if (!message && field.checkValidity && !field.checkValidity()) {\n        message = field.validity.typeMismatch ? "Please enter a valid email address." :\n          field.validity.tooShort ? "Please enter more characters." :\n          field.validity.tooLong ? "Please shorten this entry." :\n          field.validity.patternMismatch ? "Please use the requested format." : "Please check this field.";\n      }
+      let message = value ? "" : "Please complete this field.";
+      if (!message && field.checkValidity && !field.checkValidity()) {
+        message = field.validity.typeMismatch ? "Please enter a valid email address." :
+          field.validity.tooShort ? "Please enter more characters." :
+          field.validity.tooLong ? "Please shorten this entry." :
+          field.validity.patternMismatch ? "Please use the requested format." : "Please check this field.";
+      }
       if (value && definition.validate && !definition.validate(value)) message = definition.error;
       if (message && !firstInvalid) firstInvalid = field;
       setFieldError(form, field, message);
