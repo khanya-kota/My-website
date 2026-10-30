@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
    if(message.value.trim()&&message.value.trim().length<10){
     const group=message.closest(".form-group");group.querySelector(".field-error").textContent="Please enter at least 10 characters.";message.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||message;
    }
-   if(feedback)feedback.textContent=firstInvalid?"Please check the highlighted fields.":"Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
+   if(feedback)feedback.textContent=firstInvalid?"":"Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
    if(firstInvalid){firstInvalid.focus();return;}
    enquiryForm.reset();
   };
