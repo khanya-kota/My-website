@@ -13,7 +13,9 @@
     <!-- Sets the browser tab title. -->
     <title>Green Roots Organics | About Us</title>
     <!-- Links this page to the shared CSS stylesheet. -->
+    <meta name="keywords" content="Green Roots Organics, fresh produce, organic living, local fruit and vegetables">
     <link rel="stylesheet" href="../Assets/css/style.css">
+    <script src="../Assets/js/script.js" defer></script>
 <!-- Ends the head section. -->
 </head>
 <!-- Starts the visible page body and identifies the About page for CSS. -->
@@ -23,7 +25,8 @@
     <!-- Displays the website logo or brand name. -->
     <div class="logo">Green Roots Organics</div>
     <!-- Starts the main navigation menu. -->
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
         <!-- Links back to the homepage. -->
         <a class="nav-link" href="../index.html">Home</a>
         <!-- Links to the current About page and marks it active. -->
@@ -34,6 +37,7 @@
         <a class="nav-link" href="context.html">Information</a>
         <!-- Links to the Enquiry page. -->
         <a class="nav-link" href="enquiry.html">Enquiry</a>
+        <a class="nav-link" href="contact.html">Contact</a>
     <!-- Ends the navigation menu. -->
     </nav>
 <!-- Ends the website header. -->
@@ -41,7 +45,7 @@
 <!-- Starts the main About page content. -->
 <main class="site-main about-main">
     <!-- Displays the main page heading. -->
-    <h1 class="page-title">About Green Roots Organics</h1>
+    <h1 class="page-title">About Green Roots Organics</h1><figure class="page-feature-image"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="A colourful selection of fresh produce" loading="lazy"><figcaption>Fresh produce selected with care.</figcaption></figure>
     <!-- Highlights the purpose of the business. -->
     <div class="highlight about-highlight"><p><strong>Our purpose:</strong> to make fresh, locally sourced organic produce more convenient for households while encouraging responsible food choices and sustainable farming practices.</p></div>
     <!-- Creates the Our Story content box. -->
@@ -55,11 +59,13 @@
     <!-- Creates the values content box and contains the values list. -->
     <div class="box about-box values-box"><h2>Our Values</h2><ul><li><strong>Freshness:</strong> prioritising quality and fresh produce.</li><li><strong>Community:</strong> supporting connections with local growers and customers.</li><li><strong>Sustainability:</strong> promoting responsible farming and food practices.</li><li><strong>Convenience:</strong> making ordering and delivery easier for customers.</li><li><strong>Education:</strong> sharing information that helps customers understand organic living and healthy food choices.</li></ul></div>
 <!-- Ends the main content. -->
+<section class="content-section faq-section"><h2>Frequently asked questions</h2><details><summary>Where does your produce come from?</summary><p>The business focuses on locally sourced produce where available. Ask us about the current selection and sourcing for a specific item.</p></details><details><summary>Does the selection change?</summary><p>Yes. Fresh produce availability can change with the season and supply.</p></details><details><summary>Can I ask about a subscription?</summary><p>Yes. Use the enquiry form to ask about weekly or bi-weekly produce boxes, current prices and availability.</p></details></section>
 </main>
 <!-- Starts the website footer. -->
 <footer class="site-footer">
     <!-- Displays the copyright information. -->
     <p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p>
+    <p><a href="contact.html">Contact us</a> · <a href="enquiry.html">Product enquiries</a></p>
 <!-- Ends the footer. -->
 </footer>
 <!-- Ends the body. -->
