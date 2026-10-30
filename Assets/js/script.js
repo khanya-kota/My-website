@@ -43,20 +43,36 @@ document.addEventListener("DOMContentLoaded", () => {
   if(product){const message=enquiryForm.querySelector("#message");if(message)message.value="I would like to enquire about "+product+". ";}
   const validateEnquiry=()=>{
    const feedback=document.querySelector("#enquiry-feedback");
-   const name=enquiryForm.querySelector("#name").value.trim();
-   const email=enquiryForm.querySelector("#email").value.trim();
-   const phone=enquiryForm.querySelector("#phone").value.trim();
-   const enquiry=enquiryForm.querySelector("#enquiry").value;
-   const area=enquiryForm.querySelector("#area").value.trim();
-   const message=enquiryForm.querySelector("#message").value.trim();
-   let error="";
-   if(!name||!email||!phone||!enquiry||!area||!message) error="Please complete this field.";
-   else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) error="Please enter a valid email address.";
-   else if(!/^[0-9+() -]{7,20}$/.test(phone)) error="Please enter a valid phone number.";
-   else if(message.length<10) error="Please enter at least 10 characters in your enquiry.";
-   if(error){const firstMissing=[["#name",name],["#email",email],["#phone",phone],["#enquiry",enquiry],["#area",area],["#message",message]].find(([,value])=>!value);if(firstMissing)enquiryForm.querySelector(firstMissing[0])?.focus();}
-   if(feedback) feedback.textContent=error||"Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
-   if(!error) enquiryForm.reset();
+   const requiredFields=[
+    ["#name","Full name"],["#email","Email address"],["#phone","Phone number"],
+    ["#enquiry","Enquiry type"],["#area","Delivery area"],["#message","Your enquiry"]
+   ];
+   let firstInvalid=null;
+   requiredFields.forEach(([selector,label])=>{
+    const field=enquiryForm.querySelector(selector);
+    const group=field.closest(".form-group");
+    let error=group.querySelector(".field-error");
+    if(!error){error=document.createElement("small");error.className="field-error";error.setAttribute("aria-live","polite");group.appendChild(error);}
+    const empty=!field.value.trim();
+    error.textContent=empty?"Please complete this field.":"";
+    field.setAttribute("aria-invalid",String(empty));
+    if(empty&&!firstInvalid)firstInvalid=field;
+   });
+   const email=enquiryForm.querySelector("#email");
+   if(email.value.trim()&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.value.trim())){
+    const group=email.closest(".form-group");group.querySelector(".field-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
+   }
+   const phone=enquiryForm.querySelector("#phone");
+   if(phone.value.trim()&&!/^[0-9+() -]{7,20}$/.test(phone.value.trim())){
+    const group=phone.closest(".form-group");group.querySelector(".field-error").textContent="Please enter a valid phone number.";phone.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||phone;
+   }
+   const message=enquiryForm.querySelector("#message");
+   if(message.value.trim()&&message.value.trim().length<10){
+    const group=message.closest(".form-group");group.querySelector(".field-error").textContent="Please enter at least 10 characters.";message.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||message;
+   }
+   if(feedback)feedback.textContent=firstInvalid?"Please check the highlighted fields.":"Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
+   if(firstInvalid){firstInvalid.focus();return;}
+   enquiryForm.reset();
   };
   enquiryForm.addEventListener("submit",event=>event.preventDefault());
   enquiryForm.querySelector(".submit-button")?.addEventListener("click",event=>{event.preventDefault();validateEnquiry();});
@@ -66,39 +82,50 @@ document.addEventListener("DOMContentLoaded", () => {
   // Disable browser validation bubbles and show errors within the page.
   contactForm.noValidate=true;
   const businessEmail="YOUR_BUSINESS_EMAIL@example.com";
-  contactForm.querySelector(".submit-button")?.addEventListener("click",event=>{
-   event.preventDefault();
+  const validateContact=()=>{
    const feedback=document.querySelector("#contact-feedback");
-   const name=contactForm.querySelector("#contact-name").value.trim();
-   const email=contactForm.querySelector("#contact-email").value.trim();
-   const phone=contactForm.querySelector("#contact-phone").value.trim();
-   const messageType=contactForm.querySelector("#message-type").value;
-   const message=contactForm.querySelector("#contact-message").value.trim();
-   let error="";
-   if(!name||!email||!messageType||!message){
-    error="Please complete this field.";
-   }else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    error="Please enter a valid email address.";
-   }else if(phone&&!/^[0-9+() -]{7,20}$/.test(phone)){
-    error="Please enter a valid phone number or leave this field blank.";
-   }else if(message.length<10){
-    error="Please enter at least 10 characters in your message.";
+   const requiredFields=[
+    ["#contact-name","Full name"],["#contact-email","Email address"],
+    ["#message-type","Message type"],["#contact-message","Full message"]
+   ];
+   let firstInvalid=null;
+   requiredFields.forEach(([selector])=>{
+    const field=contactForm.querySelector(selector);
+    const group=field.closest(".form-group");
+    let error=group.querySelector(".field-error");
+    if(!error){error=document.createElement("small");error.className="field-error";error.setAttribute("aria-live","polite");group.appendChild(error);}
+    const empty=!field.value.trim();
+    error.textContent=empty?"Please complete this field.":"";
+    field.setAttribute("aria-invalid",String(empty));
+    if(empty&&!firstInvalid)firstInvalid=field;
+   });
+   const email=contactForm.querySelector("#contact-email");
+   if(email.value.trim()&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.value.trim())){
+    email.closest(".form-group").querySelector(".field-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
    }
-   if(error){
-    const firstMissing=[["#contact-name",name],["#contact-email",email],["#message-type",messageType],["#contact-message",message]].find(([,value])=>!value);
-    if(firstMissing)contactForm.querySelector(firstMissing[0])?.focus();
-    if(feedback)feedback.textContent=error;
-    return;
+   const phone=contactForm.querySelector("#contact-phone");
+   let phoneError=phone.closest(".form-group").querySelector(".field-error");
+   if(!phoneError){phoneError=document.createElement("small");phoneError.className="field-error";phone.closest(".form-group").appendChild(phoneError);}
+   phoneError.textContent=phone.value.trim()&&!/^[0-9+() -]{7,20}$/.test(phone.value.trim())?"Please enter a valid phone number or leave this field blank.":"";
+   if(phoneError.textContent){phone.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||phone;}else phone.setAttribute("aria-invalid","false");
+   const message=contactForm.querySelector("#contact-message");
+   if(message.value.trim()&&message.value.trim().length<10){
+    message.closest(".form-group").querySelector(".field-error").textContent="Please enter at least 10 characters.";message.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||message;
    }
+   if(feedback)feedback.textContent=firstInvalid?"Please check the highlighted fields.":"";
+   if(firstInvalid){firstInvalid.focus();return;}
+   const businessEmail="YOUR_BUSINESS_EMAIL@example.com";
    if(businessEmail==="YOUR_BUSINESS_EMAIL@example.com"){
-    if(feedback)feedback.textContent="Your message is valid, but the business email address has not been configured yet. Add the correct address in Assets/js/script.js before publishing.";
+    if(feedback)feedback.textContent="Your message is valid, but the business email address has not been configured yet.";
     return;
    }
    const data=new FormData(contactForm);
    const subject=encodeURIComponent("Green Roots Organics - "+data.get("messageType"));
-   const body=encodeURIComponent("Name: "+data.get("name")+"\nEmail: "+data.get("email")+"\nPhone: "+(data.get("phone")||"Not supplied")+"\nMessage type: "+data.get("messageType")+"\n\nMessage:\n"+data.get("message"));
+   const body=encodeURIComponent("Name: "+data.get("name")+"\\nEmail: "+data.get("email")+"\\nPhone: "+(data.get("phone")||"Not supplied")+"\\nMessage type: "+data.get("messageType")+"\\n\\nMessage:\\n"+data.get("message"));
    window.location.href="mailto:"+businessEmail+"?subject="+subject+"&body="+body;
    if(feedback)feedback.textContent="Your email application should open with your message ready to review and send.";
-  });
+  };
+  contactForm.addEventListener("submit",event=>{event.preventDefault();validateContact();});
+  contactForm.querySelector(".submit-button")?.addEventListener("click",event=>{event.preventDefault();validateContact();});
  }
 });
