@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Disable browser validation bubbles and show errors within the page.
   contactForm.noValidate=true;
   const businessEmail="YOUR_BUSINESS_EMAIL@example.com";
-  contactForm.addEventListener("submit",event=>{
+  contactForm.querySelector(".submit-button")?.addEventListener("click",event=>{
    event.preventDefault();
    const feedback=document.querySelector("#contact-feedback");
    const name=contactForm.querySelector("#contact-name").value.trim();
