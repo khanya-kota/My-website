@@ -50,10 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
    const area=enquiryForm.querySelector("#area").value.trim();
    const message=enquiryForm.querySelector("#message").value.trim();
    let error="";
-   if(!name||!email||!phone||!enquiry||!area||!message) error="Please complete all required fields.";
+   if(!name||!email||!phone||!enquiry||!area||!message) error="Please complete this field.";
    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) error="Please enter a valid email address.";
    else if(!/^[0-9+() -]{7,20}$/.test(phone)) error="Please enter a valid phone number.";
    else if(message.length<10) error="Please enter at least 10 characters in your enquiry.";
+   if(error){const firstMissing=[["#name",name],["#email",email],["#phone",phone],["#enquiry",enquiry],["#area",area],["#message",message]].find(([,value])=>!value);if(firstMissing)enquiryForm.querySelector(firstMissing[0])?.focus();}
    if(feedback) feedback.textContent=error||"Thank you. Your enquiry details have been checked. Current seasonal availability, pricing and delivery options must be confirmed by Green Roots Organics before an order can be finalised.";
    if(!error) enquiryForm.reset();
   };
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const message=contactForm.querySelector("#contact-message").value.trim();
    let error="";
    if(!name||!email||!messageType||!message){
-    error="Please complete all required fields.";
+    error="Please complete this field.";
    }else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
     error="Please enter a valid email address.";
    }else if(phone&&!/^[0-9+() -]{7,20}$/.test(phone)){
@@ -84,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
     error="Please enter at least 10 characters in your message.";
    }
    if(error){
+    const firstMissing=[["#contact-name",name],["#contact-email",email],["#message-type",messageType],["#contact-message",message]].find(([,value])=>!value);
+    if(firstMissing)contactForm.querySelector(firstMissing[0])?.focus();
     if(feedback)feedback.textContent=error;
     return;
    }
