@@ -531,3 +531,20 @@ main img:not(.lightbox img) {
     width: auto;
     height: auto;
 }
+
+
+/* Field-by-field validation messages for Enquiry and Contact forms. */
+.field-error {
+    display: block;
+    margin-top: 6px;
+    color: #b42318;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.form-control[aria-invalid="true"],
+.contact-form input[aria-invalid="true"],
+.contact-form select[aria-invalid="true"],
+.contact-form textarea[aria-invalid="true"] {
+    border: 2px solid #b42318;
+    outline-color: #b42318;
+}
