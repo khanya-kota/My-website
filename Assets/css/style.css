@@ -388,3 +388,32 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* Ensure filtered catalogue cards respect JavaScript's hidden state. */
 .product-card[hidden], #no-products[hidden] { display: none !important; }
+
+
+/* BUSINESS ADDRESS AND LOCATION MAP */
+.business-address {
+    display: block;
+    margin: 16px 0;
+    padding: 16px 20px;
+    border-left: 4px solid #315c35;
+    border-radius: 6px;
+    background: #ffffff;
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.map-frame {
+    width: 100%;
+    min-height: 320px;
+    overflow: hidden;
+    border: 1px solid #d5dfd0;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.map-frame iframe {
+    display: block;
+    width: 100%;
+    min-height: 320px;
+    border: 0;
+}
