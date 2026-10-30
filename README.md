@@ -286,10 +286,13 @@ Update README documentation
 ```text
 My-website/
 ├── Assets/
-│   └── css/
-│       └── style.css
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
 ├── Pages/
 │   ├── about.html
+│   ├── contact.html
 │   ├── context.html
 │   ├── descriptive.html
 │   └── enquiry.html
