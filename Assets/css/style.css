@@ -417,3 +417,54 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     min-height: 320px;
     border: 0;
 }
+
+
+/* IMAGE SIZE FIX: keep website photos compact and consistent. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-image-button img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+}
+
+.home-product {
+    min-height: 0;
+}
+
+.home-product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.page-feature-image {
+    max-width: 560px;
+    margin: 18px auto;
+}
+
+.page-feature-image img {
+    width: 100%;
+    height: 210px;
+    max-height: 210px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+    .product-image-button img {
+        height: 135px;
+    }
+
+    .home-product img {
+        height: 140px;
+    }
+
+    .page-feature-image img {
+        height: 180px;
+        max-height: 180px;
+    }
+}
