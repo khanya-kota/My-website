@@ -15,7 +15,7 @@
     <title>Green Roots Organics | Enquiry</title>
     <!-- Links this page to the shared CSS stylesheet. -->
     <link rel="stylesheet" href="../Assets/css/style.css">
-    <script src="../Assets/js/script.js?v=20261030-14" defer></script>
+    <script src="../Assets/js/script.js?v=20261030-part3" defer></script>
 <!-- Ends the head section. -->
 </head>
 <!-- Starts the visible body and identifies the Enquiry page for CSS. -->
@@ -75,11 +75,11 @@
     <!-- Starts the form section. -->
     <section class="form-section">
         <!-- Creates the enquiry form and sends it using POST. -->
-        <form class="enquiry-form" id="enquiry-form" onsubmit="return false;" novalidate>
+        <form class="enquiry-form" id="enquiry-form"  action="#" method="post">
 <p>Complete this form to ask about a product, subscription or delivery. We will confirm current stock, prices and delivery arrangements.</p>
 <div class="form-group"><label for="name">Full name</label><input class="form-control" type="text" id="name" name="name" autocomplete="name"><small class="field-error" id="name-error" aria-live="polite"></small>
 </div>
-<div class="form-group"><label for="email">Email address</label><input class="form-control" type="email" id="email" name="email" autocomplete="email"><small class="field-error" id="email-error" aria-live="polite"></small>
+<div class="form-group"><label for="email">Email address</label><input class="form-control" type="text" inputmode="email" id="email" name="email" autocomplete="email"><small class="field-error" id="email-error" aria-live="polite"></small>
 </div>
 <div class="form-group"><label for="phone">Phone number</label><input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel"><small class="field-error" id="phone-error" aria-live="polite"></small>
 </div>
@@ -90,7 +90,7 @@
 </div>
 <div class="form-group"><label for="message">Your enquiry</label><textarea class="form-control message-field" id="message" name="message" placeholder="Tell us what produce you are interested in...">
 </textarea><small class="field-error" id="message-error" aria-live="polite"></small></div>
-<button class="submit-button" type="button">Submit product enquiry</button><p class="form-feedback" id="enquiry-feedback" role="status" aria-live="polite"></p></form>
+<button class="submit-button" type="submit">Submit product enquiry</button><p class="form-feedback" id="enquiry-feedback" role="status" aria-live="polite"></p></form>
     <!-- Ends the form section. -->
     </section>
 <!-- Ends the main content. -->
