@@ -307,67 +307,71 @@ All HTML pages are connected to the shared stylesheet at `Assets/css/style.css`.
 
 ## 14. Part 3: Functionality, Validation, SEO and Publishing
 
-### Part 3 Enhancements
+The Part 3 enhancements follow the WEDE5020 POE Part 3 Requirements Guide and use HTML5, CSS3 and vanilla JavaScript.
 
-The Part 3 work builds on the existing Green Roots Organics storyline and uses HTML5, CSS3 and vanilla JavaScript.
+### JavaScript functionality
+- Responsive navigation that closes after a visitor selects a page.
+- Product catalogue keyword search, category filtering and A–Z / Z–A sorting with a live result count and empty-results message.
+- Site-wide image lightbox: click or keyboard-activate an image to enlarge it; use previous/next controls or arrow keys to browse; close with the close button, backdrop or Escape key.
+- Custom JavaScript validation for the Enquiry and Contact forms. Error messages appear beside the relevant field, invalid fields receive an accessible state, and users are moved to the first invalid field.
+- The Enquiry form gives a product-specific response and explains that stock, pricing and delivery must be confirmed.
+- The Contact form validates a general message and prepares a mailto email when the recipient address is configured.
 
-- Product catalogue with photographs, category filters, keyword search and A–Z / Z–A sorting.
-- Product image lightbox with close button and Escape-key support.
-- Responsive navigation menu for small screens.
-- Frequently asked questions using accessible HTML disclosure elements.
-- Product enquiry form with required fields, email validation, phone pattern, length limits and a confirmation response.
-- Separate general contact form that validates details and compiles an email for the customer to review and send.
-- Unique page titles, meta descriptions, keywords, meaningful image alt text and internal links.
-- Responsive product cards, form layouts, gallery and mobile navigation.
-- Approximate OpenStreetMap city-area reference for Port Elizabeth. It is not a verified business, farm or collection-point address.
+### Forms and validation
+- HTML browser validation attributes and native validation bubbles have been removed as requested. The shared JavaScript sets `noValidate` and performs the checks.
+- The Enquiry form is for product, subscription, quantity and delivery-area requests.
+- The Contact form is for general questions, feedback and partnership communication; its phone number is optional.
+- This is a static GitHub Pages website. The Enquiry form displays a client-side response; it does not store submissions on a server.
+- **Before final submission:** replace `YOUR_BUSINESS_EMAIL@example.com` in `Assets/js/script.js` with the real organisation email address. Without this, the Contact form can validate the message but cannot prepare it for the correct recipient. No business email address was supplied for this update.
 
-### Forms and Submission Behaviour
+### Search and image gallery
+- Product search checks product names and card content.
+- Category buttons filter fruit, vegetables and produce boxes.
+- Sorting supports featured order, A–Z and Z–A.
+- All meaningful images inside page content can be opened in the responsive lightbox. Images retain descriptive alt text; keyboard users can open images and browse with the arrow keys.
 
-The enquiry form is a front-end demonstration. It validates the product request and displays a message explaining that stock, prices and delivery must be confirmed. The static website does not store submissions or send them to a business server.
+### SEO, accessibility and responsive quality
+- Unique page titles, meta descriptions and page-specific keywords.
+- Descriptive image alt text, labelled form controls and meaningful heading structure.
+- Responsive product search controls, navigation, cards, forms and lightbox.
+- Visible keyboard focus, accessible status/error messages and Escape-key lightbox closing.
+- Images use lazy loading where appropriate and CSS constrains their display size.
 
-The contact form prepares a mailto email. Before publishing, replace YOUR_BUSINESS_EMAIL@example.com in Assets/js/script.js with the real business email address. A visitor's email application must be configured to send the message. A server-side form endpoint would be required for automatic website submission and storage.
-
-### Product Photography
-
-Product photographs are illustrative images loaded from Unsplash. They represent fruit, vegetables and produce boxes; they are not guaranteed photographs of the exact stock supplied by the business. Replace them with original Green Roots Organics product photographs when available. No prices or live stock quantities are displayed because confirmed values were not provided.
-
-### Part 3 Files
-
+### Part 3 files
 | File | Purpose |
 |---|---|
-| Assets/js/script.js | Mobile menu, product search/filter/sort, image lightbox and form interactions |
-| Assets/css/style.css | Shared styling plus responsive Part 3 catalogue, gallery, form and map styles |
-| Pages/descriptive.html | Product catalogue with photographs and interactive search/filter/sort |
-| Pages/enquiry.html | Product and subscription enquiry form |
-| Pages/contact.html | Separate general contact form and approximate city map |
+| `Assets/js/script.js` | Navigation, catalogue search/filter/sort, site-wide image lightbox and JavaScript form validation |
+| `Assets/css/style.css` | Shared styling, responsive search controls, field errors and lightbox |
+| `Pages/descriptive.html` | Product catalogue, search, category filters, sorting and product enquiries |
+| `Pages/enquiry.html` | Product, subscription and delivery enquiry form |
+| `Pages/contact.html` | General contact form and location information |
 
-### Testing Checklist
+### Testing checklist
+- [ ] Test every navigation link on all pages.
+- [ ] Test the mobile menu and confirm it closes after navigation.
+- [ ] Search for products using full and partial keywords.
+- [ ] Test every product category filter, A–Z and Z–A sorting, and no-results behaviour.
+- [ ] Open images on the Home, About, Information and Products pages; test close, backdrop, Escape, previous/next and keyboard access.
+- [ ] Submit both forms empty and confirm each required field displays its own message.
+- [ ] Test invalid email, invalid phone, short message and corrected valid values.
+- [ ] Confirm the Enquiry form displays its availability/pricing response.
+- [ ] Configure the real business email and test the Contact mailto workflow.
+- [ ] Test desktop and mobile widths, images, map, CSS and JavaScript on the deployed site.
+- [ ] Verify the live website in a private/incognito browser window after GitHub Pages publishes.
 
-- [ ] Open every page and test all navigation links.
-- [ ] Test the mobile menu at a narrow screen width.
-- [ ] Search for a product and test each category filter.
-- [ ] Test A–Z and Z–A sorting.
-- [ ] Open and close each product photograph, including with Escape.
-- [ ] Submit the enquiry form with missing and valid values.
-- [ ] Configure the real business email and test the contact email workflow.
-- [ ] Confirm external product photographs load and replace them with owned images where possible.
-- [ ] Test all pages at desktop and mobile widths.
-- [ ] Verify the deployed website and all relative asset paths.
-
-### Part 3 Changelog
-
-| Version | Area | Change made | Reason / result |
+### Part 3 changelog
+| Version | Area | Issue / change | Reason / result |
 |---|---|---|---|
-| v3.1 | Products | Added product photographs, image descriptions and product enquiry links | Makes the product range easier to understand visually |
-| v3.2 | JavaScript | Added product search, category filtering and sorting | Helps visitors find relevant products |
-| v3.3 | Gallery | Added an image lightbox with keyboard close support | Allows larger product previews without leaving the page |
-| v3.4 | Forms | Added separate product enquiry and general contact forms with validation | Gives each form a clear purpose |
-| v3.5 | Navigation | Added responsive mobile navigation and contact links | Improves navigation on smaller screens |
-| v3.6 | SEO and accessibility | Improved metadata, alt text, labels and focus states | Helps search engines and visitors understand and use the site |
-| v3.7 | Documentation | Added Part 3 implementation notes and test checklist | Makes changes and remaining configuration requirements traceable |
+| v3.1 | Products | Added product images, descriptive alt text and enquiry links | Makes the product range easier to understand |
+| v3.2 | Search | Added keyword search, category filters, sorting and live result feedback | Helps visitors find relevant produce |
+| v3.3 | Gallery | Added a responsive lightbox with keyboard navigation and close controls across all content pages | Allows larger image previews without leaving the page |
+| v3.4 | Forms | Replaced browser-native validation with field-level JavaScript validation | Shows clear messages beside the relevant fields |
+| v3.5 | Enquiry | Added product-specific enquiry feedback and prefilled product details from catalogue links | Connects product browsing to the enquiry journey |
+| v3.6 | Contact | Kept general contact separate and added JavaScript validation plus email preparation | Supports general communication; recipient configuration remains required |
+| v3.7 | Responsive design | Improved search/filter layout and mobile controls | Makes catalogue tools easier to use on smaller screens |
+| v3.8 | Documentation | Updated Part 3 feature notes, testing checklist and requirements traceability | Helps the assessor locate and verify the implemented features |
 
 ### References
-
-- WEDE5020 POE Part 3 Requirements, Implementation & Evidence Guide (student-provided course guide).
-- Unsplash: https://unsplash.com/ (illustrative product photographs; image URLs are embedded in the product page).
-- OpenStreetMap: https://www.openstreetmap.org/ (approximate Port Elizabeth city-area map reference).
+- WEDE5020 POE Part 3 Requirements, Implementation & Evidence Guide (course guide supplied for this project).
+- Unsplash: https://unsplash.com/ (illustrative product photographs).
+- OpenStreetMap: https://www.openstreetmap.org/ (map reference).
