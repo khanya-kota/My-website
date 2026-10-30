@@ -71,11 +71,35 @@ document.addEventListener("DOMContentLoaded", () => {
  }
  const contactForm=document.querySelector("#contact-form");
  if(contactForm){
-  // Replace this placeholder with the real business email before publishing.
+  // Disable browser validation bubbles and show errors within the page.
+  contactForm.noValidate=true;
   const businessEmail="YOUR_BUSINESS_EMAIL@example.com";
   contactForm.addEventListener("submit",event=>{
-   event.preventDefault();const feedback=document.querySelector("#contact-feedback");if(!contactForm.reportValidity())return;
-   if(businessEmail==="YOUR_BUSINESS_EMAIL@example.com"){if(feedback)feedback.textContent="The form is valid, but the business email address has not been configured yet. Add the correct address in Assets/js/script.js before publishing.";return;}
+   event.preventDefault();
+   const feedback=document.querySelector("#contact-feedback");
+   const name=contactForm.querySelector("#contact-name").value.trim();
+   const email=contactForm.querySelector("#contact-email").value.trim();
+   const phone=contactForm.querySelector("#contact-phone").value.trim();
+   const messageType=contactForm.querySelector("#message-type").value;
+   const message=contactForm.querySelector("#contact-message").value.trim();
+   let error="";
+   if(!name||!email||!messageType||!message){
+    error="Please complete all required fields.";
+   }else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    error="Please enter a valid email address.";
+   }else if(phone&&!/^[0-9+() -]{7,20}$/.test(phone)){
+    error="Please enter a valid phone number or leave this field blank.";
+   }else if(message.length<10){
+    error="Please enter at least 10 characters in your message.";
+   }
+   if(error){
+    if(feedback)feedback.textContent=error;
+    return;
+   }
+   if(businessEmail==="YOUR_BUSINESS_EMAIL@example.com"){
+    if(feedback)feedback.textContent="Your message is valid, but the business email address has not been configured yet. Add the correct address in Assets/js/script.js before publishing.";
+    return;
+   }
    const data=new FormData(contactForm);
    const subject=encodeURIComponent("Green Roots Organics - "+data.get("messageType"));
    const body=encodeURIComponent("Name: "+data.get("name")+"\nEmail: "+data.get("email")+"\nPhone: "+(data.get("phone")||"Not supplied")+"\nMessage type: "+data.get("messageType")+"\n\nMessage:\n"+data.get("message"));
@@ -83,4 +107,3 @@ document.addEventListener("DOMContentLoaded", () => {
    if(feedback)feedback.textContent="Your email application should open with your message ready to review and send.";
   });
  }
-});
