@@ -13,7 +13,9 @@
     <!-- Sets the browser tab title. -->
     <title>Green Roots Organics | Information</title>
     <!-- Links this page to the shared CSS stylesheet. -->
+    <meta name="keywords" content="Green Roots Organics, fresh produce, organic living, local fruit and vegetables">
     <link rel="stylesheet" href="../Assets/css/style.css">
+    <script src="../Assets/js/script.js" defer></script>
 <!-- Ends the head section. -->
 </head>
 <!-- Starts the visible body and identifies the Information page for CSS. -->
@@ -23,7 +25,8 @@
     <!-- Displays the website logo. -->
     <div class="logo">Green Roots Organics</div>
     <!-- Starts the main navigation menu. -->
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
         <!-- Links to the homepage. -->
         <a class="nav-link" href="../index.html">Home</a>
         <!-- Links to the About page. -->
@@ -34,6 +37,7 @@
         <a class="nav-link active" href="context.html">Information</a>
         <!-- Links to the Enquiry page. -->
         <a class="nav-link" href="enquiry.html">Enquiry</a>
+        <a class="nav-link" href="contact.html">Contact</a>
     <!-- Ends the navigation menu. -->
     </nav>
 <!-- Ends the header. -->
@@ -43,7 +47,7 @@
     <!-- Starts the introduction section. -->
     <section class="information-intro">
         <!-- Displays the main Information heading. -->
-        <h1 class="page-title">Organic Living & Information</h1>
+        <h1 class="page-title">Organic Living & Information</h1><figure class="page-feature-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="A colourful fresh vegetable salad" loading="lazy"><figcaption>Fresh ingredients can add variety to everyday meals.</figcaption></figure>
         <!-- Displays an introductory information tip. -->
         <p class="tip information-tip">This page provides general information to help customers understand organic produce, healthy eating, sustainable farming and our subscription approach.</p>
     <!-- Ends the introduction section. -->
@@ -70,6 +74,7 @@
 <footer class="site-footer">
     <!-- Displays the copyright information. -->
     <p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p>
+    <p><a href="contact.html">Contact us</a> · <a href="enquiry.html">Product enquiries</a></p>
 <!-- Ends the footer. -->
 </footer>
 <!-- Ends the body. -->
