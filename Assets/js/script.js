@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
    if(message.value.trim()&&message.value.trim().length<10){
     message.closest(".form-group").querySelector(".field-error").textContent="Please enter at least 10 characters.";message.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||message;
    }
-   if(feedback)feedback.textContent=firstInvalid?"Please check the highlighted fields.":"";
+   if(feedback)feedback.textContent="";
    if(firstInvalid){firstInvalid.focus();return;}
    const businessEmail="YOUR_BUSINESS_EMAIL@example.com";
    if(businessEmail==="YOUR_BUSINESS_EMAIL@example.com"){
