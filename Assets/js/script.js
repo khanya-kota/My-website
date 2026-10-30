@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
    requiredFields.forEach(([selector,label])=>{
     const field=enquiryForm.querySelector(selector);
     const group=field.closest(".form-group");
-    let error=group.querySelector(".field-error");
-    if(!error){error=document.createElement("small");error.className="field-error";error.setAttribute("aria-live","polite");group.appendChild(error);}
+    let error=document.getElementById(field.id+"-error");
+    if(!error){error=document.createElement("small");error.className="field-error";error.id=field.id+"-error";error.setAttribute("aria-live","polite");field.insertAdjacentElement("afterend",error);}
     const empty=!field.value.trim();
     error.textContent=empty?"Please complete this field.":"";
     field.setAttribute("aria-invalid",String(empty));
@@ -60,11 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
    });
    const email=enquiryForm.querySelector("#email");
    if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
-    const group=email.closest(".form-group");group.querySelector(".field-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
+    const group=email.closest(".form-group");document.getElementById(email.id+"-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
    }
    const phone=enquiryForm.querySelector("#phone");
    if(phone.value.trim()&&!/^[0-9+() -]{7,20}$/.test(phone.value.trim())){
-    const group=phone.closest(".form-group");group.querySelector(".field-error").textContent="Please enter a valid phone number.";phone.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||phone;
+    const group=phone.closest(".form-group");document.getElementById(phone.id+"-error").textContent="Please enter a valid phone number.";phone.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||phone;
    }
    const message=enquiryForm.querySelector("#message");
    if(message.value.trim()&&message.value.trim().length<10){
@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
    requiredFields.forEach(([selector])=>{
     const field=contactForm.querySelector(selector);
     const group=field.closest(".form-group");
-    let error=group.querySelector(".field-error");
-    if(!error){error=document.createElement("small");error.className="field-error";error.setAttribute("aria-live","polite");group.appendChild(error);}
+    let error=document.getElementById(field.id+"-error");
+    if(!error){error=document.createElement("small");error.className="field-error";error.id=field.id+"-error";error.setAttribute("aria-live","polite");field.insertAdjacentElement("afterend",error);}
     const empty=!field.value.trim();
     error.textContent=empty?"Please complete this field.":"";
     field.setAttribute("aria-invalid",String(empty));
@@ -101,16 +101,16 @@ document.addEventListener("DOMContentLoaded", () => {
    });
    const email=contactForm.querySelector("#contact-email");
    if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
-    email.closest(".form-group").querySelector(".field-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
+    document.getElementById(email.id+"-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
    }
    const phone=contactForm.querySelector("#contact-phone");
-   let phoneError=phone.closest(".form-group").querySelector(".field-error");
+   let phoneError=document.getElementById(phone.id+"-error");
    if(!phoneError){phoneError=document.createElement("small");phoneError.className="field-error";phone.closest(".form-group").appendChild(phoneError);}
    phoneError.textContent=phone.value.trim()&&!/^[0-9+() -]{7,20}$/.test(phone.value.trim())?"Please enter a valid phone number or leave this field blank.":"";
    if(phoneError.textContent){phone.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||phone;}else phone.setAttribute("aria-invalid","false");
    const message=contactForm.querySelector("#contact-message");
    if(message.value.trim()&&message.value.trim().length<10){
-    message.closest(".form-group").querySelector(".field-error").textContent="Please enter at least 10 characters.";message.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||message;
+    document.getElementById(message.id+"-error").textContent="Please enter at least 10 characters.";message.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||message;
    }
    if(feedback)feedback.textContent="";
    if(firstInvalid){firstInvalid.focus();return;}
