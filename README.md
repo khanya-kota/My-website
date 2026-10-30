@@ -298,3 +298,73 @@ My-website/
 ```
 
 All HTML pages are connected to the shared stylesheet at `Assets/css/style.css`. Pages inside the `Pages` folder use the relative path `../Assets/css/style.css`.
+
+
+---
+
+## 14. Part 3: Functionality, Validation, SEO and Publishing
+
+### Part 3 Enhancements
+
+The Part 3 work builds on the existing Green Roots Organics storyline and uses HTML5, CSS3 and vanilla JavaScript.
+
+- Product catalogue with photographs, category filters, keyword search and A–Z / Z–A sorting.
+- Product image lightbox with close button and Escape-key support.
+- Responsive navigation menu for small screens.
+- Frequently asked questions using accessible HTML disclosure elements.
+- Product enquiry form with required fields, email validation, phone pattern, length limits and a confirmation response.
+- Separate general contact form that validates details and compiles an email for the customer to review and send.
+- Unique page titles, meta descriptions, keywords, meaningful image alt text and internal links.
+- Responsive product cards, form layouts, gallery and mobile navigation.
+- Approximate OpenStreetMap city-area reference for Port Elizabeth. It is not a verified business, farm or collection-point address.
+
+### Forms and Submission Behaviour
+
+The enquiry form is a front-end demonstration. It validates the product request and displays a message explaining that stock, prices and delivery must be confirmed. The static website does not store submissions or send them to a business server.
+
+The contact form prepares a mailto email. Before publishing, replace YOUR_BUSINESS_EMAIL@example.com in Assets/js/script.js with the real business email address. A visitor's email application must be configured to send the message. A server-side form endpoint would be required for automatic website submission and storage.
+
+### Product Photography
+
+Product photographs are illustrative images loaded from Unsplash. They represent fruit, vegetables and produce boxes; they are not guaranteed photographs of the exact stock supplied by the business. Replace them with original Green Roots Organics product photographs when available. No prices or live stock quantities are displayed because confirmed values were not provided.
+
+### Part 3 Files
+
+| File | Purpose |
+|---|---|
+| Assets/js/script.js | Mobile menu, product search/filter/sort, image lightbox and form interactions |
+| Assets/css/style.css | Shared styling plus responsive Part 3 catalogue, gallery, form and map styles |
+| Pages/descriptive.html | Product catalogue with photographs and interactive search/filter/sort |
+| Pages/enquiry.html | Product and subscription enquiry form |
+| Pages/contact.html | Separate general contact form and approximate city map |
+
+### Testing Checklist
+
+- [ ] Open every page and test all navigation links.
+- [ ] Test the mobile menu at a narrow screen width.
+- [ ] Search for a product and test each category filter.
+- [ ] Test A–Z and Z–A sorting.
+- [ ] Open and close each product photograph, including with Escape.
+- [ ] Submit the enquiry form with missing and valid values.
+- [ ] Configure the real business email and test the contact email workflow.
+- [ ] Confirm external product photographs load and replace them with owned images where possible.
+- [ ] Test all pages at desktop and mobile widths.
+- [ ] Verify the deployed website and all relative asset paths.
+
+### Part 3 Changelog
+
+| Version | Area | Change made | Reason / result |
+|---|---|---|---|
+| v3.1 | Products | Added product photographs, image descriptions and product enquiry links | Makes the product range easier to understand visually |
+| v3.2 | JavaScript | Added product search, category filtering and sorting | Helps visitors find relevant products |
+| v3.3 | Gallery | Added an image lightbox with keyboard close support | Allows larger product previews without leaving the page |
+| v3.4 | Forms | Added separate product enquiry and general contact forms with validation | Gives each form a clear purpose |
+| v3.5 | Navigation | Added responsive mobile navigation and contact links | Improves navigation on smaller screens |
+| v3.6 | SEO and accessibility | Improved metadata, alt text, labels and focus states | Helps search engines and visitors understand and use the site |
+| v3.7 | Documentation | Added Part 3 implementation notes and test checklist | Makes changes and remaining configuration requirements traceable |
+
+### References
+
+- WEDE5020 POE Part 3 Requirements, Implementation & Evidence Guide (student-provided course guide).
+- Unsplash: https://unsplash.com/ (illustrative product photographs; image URLs are embedded in the product page).
+- OpenStreetMap: https://www.openstreetmap.org/ (approximate Port Elizabeth city-area map reference).
