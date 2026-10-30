@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
    let error="";
    if(!name||!email||!phone||!enquiry||!area||!message){
     error="Please complete all required fields.";
-   }else if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)){
+   }else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
     error="Please enter a valid email address.";
    }else if(!/^[0-9+() -]{7,20}$/.test(phone)){
     error="Please enter a valid phone number.";
