@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(empty&&!firstInvalid)firstInvalid=field;
    });
    const email=enquiryForm.querySelector("#email");
-   if(email.value.trim()&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.value.trim())){
+   if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
     const group=email.closest(".form-group");group.querySelector(".field-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
    }
    const phone=enquiryForm.querySelector("#phone");
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(empty&&!firstInvalid)firstInvalid=field;
    });
    const email=contactForm.querySelector("#contact-email");
-   if(email.value.trim()&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.value.trim())){
+   if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
     email.closest(".form-group").querySelector(".field-error").textContent="Please enter a valid email address.";email.setAttribute("aria-invalid","true");firstInvalid=firstInvalid||email;
    }
    const phone=contactForm.querySelector("#contact-phone");
