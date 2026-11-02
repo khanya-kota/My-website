@@ -1,3 +1,6 @@
+<!-- README documentation for the Green Roots Organics website project. -->
+<!-- The sections below describe the project, its pages, technologies, features and implementation. -->
+
 # Green Roots Organics Website
 
 ## 1. Project Overview
