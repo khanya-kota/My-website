@@ -324,6 +324,7 @@ footer {
 /* h1 { font-size: 3rem; } */
 
 /* PART 3: PRODUCT CATALOGUE, GALLERY AND INTERACTIONS */
+/* Shared design tokens and keyboard-focus styling used by interactive controls. */
 :root { --forest:#244b2b; --leaf:#477a45; --cream:#f7f5ec; --sun:#e5b84b; }
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible { outline:3px solid #d79e22; outline-offset:3px; }
 .site-header { position:relative; }
@@ -372,6 +373,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .map-frame { height:320px; overflow:hidden; border-radius:12px; border:1px solid #d4ddcf; }
 .map-frame iframe { width:100%; height:100%; border:0; }
 .site-footer a { color:#fff; }
+/* Adjust catalogue controls and product cards for narrow screens. */
 @media(max-width:700px) {
 .menu-toggle { display:inline-block; }
 .site-header { display:flex; flex-direction:row; justify-content:space-between; align-items:center; }
@@ -384,6 +386,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .home-product img { height:200px; }
 .product-image-button img { height:210px; }
 }
+/* Respect visitors who request less motion in their device accessibility settings. */
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; } }
 
 /* Ensure filtered catalogue cards respect JavaScript's hidden state. */
@@ -391,6 +394,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 
 /* BUSINESS ADDRESS AND LOCATION MAP */
+/* Styles the business address block and embedded map container. */
 .business-address {
     display: block;
     margin: 16px 0;
@@ -420,6 +424,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 
 /* IMAGE SIZE FIX: keep website photos compact and consistent. */
+/* Set predictable image sizing so photos fit within their content areas. */
 img {
     max-width: 100%;
     height: auto;
@@ -471,6 +476,7 @@ img {
 
 
 /* FINAL IMAGE DISPLAY FIX: smaller pictures across all pages. */
+/* Final overrides keep product, homepage and feature images compact on desktop and mobile. */
 main img:not(.lightbox img) {
     display: block;
     max-width: 100%;
@@ -525,6 +531,7 @@ main img:not(.lightbox img) {
 }
 
 /* Keep the enlarged preview usable when a product photo is opened. */
+/* The lightbox image can grow independently of the smaller page thumbnails. */
 .lightbox img {
     max-width: min(92vw, 900px);
     max-height: 78vh;
@@ -534,6 +541,7 @@ main img:not(.lightbox img) {
 
 
 /* Field-by-field validation messages for Enquiry and Contact forms. */
+/* Error text and invalid-field borders provide visible feedback from script.js. */
 .field-error {
     display: block;
     margin-top: 6px;
@@ -551,6 +559,7 @@ main img:not(.lightbox img) {
 
 
 /* Part 3: clearer product search, filters and responsive controls. */
+/* Refines the catalogue toolbar, category buttons and result count layout. */
 .product-tools {
   grid-template-columns: minmax(0, 1fr) minmax(190px, 230px);
   gap: 10px 18px;
