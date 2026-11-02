@@ -2,6 +2,8 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // RESPONSIVE NAVIGATION
+  // Toggle the mobile menu and keep the button's accessible state in sync.
   // Responsive navigation menu.
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".site-nav");
@@ -20,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // PRODUCT CATALOGUE
+  // Filter cards by category and search text, then sort the visible results.
   // Product catalogue: keyword search, category filtering and sorting.
   const productGrid = document.querySelector("#product-grid");
   if (productGrid) {
@@ -75,6 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProducts();
   }
 
+  // IMAGE LIGHTBOX
+  // Collect page images and create a reusable, keyboard-accessible preview dialog.
   // Site-wide image lightbox. Any meaningful page image opens at a larger size.
   const pageImages = Array.from(document.querySelectorAll("main img"))
     .filter(image => image.id !== "lightbox-image" && image.getAttribute("src"));
@@ -132,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const captionElement = lightbox.querySelector(".lightbox-caption");
 
+  // Display the selected image and wrap around when browsing past either end.
   const showImage = index => {
     if (!pageImages.length || !previewImage) return;
     activeImageIndex = (index + pageImages.length) % pageImages.length;
@@ -142,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.hidden = false;
     closeButton?.focus();
   };
+  // Hide the preview, clear its image source and return keyboard focus to the opener.
   const closeImage = () => {
     if (!lightbox) return;
     lightbox.hidden = true;
@@ -180,9 +188,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.key === "ArrowRight") showImage(activeImageIndex + 1);
   });
 
+  // FORM VALIDATION HELPERS
+  // These reusable functions check field values, create inline errors and focus the first invalid field.
   // Shared helpers for custom JavaScript-only form validation.
+  // Check email and phone formats before accepting the form values.
   const validEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   const validPhone = value => /^[0-9+() -]{7,20}$/.test(value);
+  // Show or clear an accessible error message beside one form field.
   const setFieldError = (form, field, message) => {
     if (!field) return;
     let error = form.querySelector("#" + field.id + "-error");
@@ -196,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
     error.textContent = message;
     field.setAttribute("aria-invalid", String(Boolean(message)));
   };
+  // Validate every configured field and move focus to the first field that needs attention.
   const validateFields = (form, definitions) => {
     let firstInvalid = null;
     definitions.forEach(definition => {
@@ -220,6 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return !firstInvalid;
   };
 
+  // ENQUIRY FORM
+  // Prefill product enquiries when a visitor follows a product link, then validate the submission.
   // Product enquiry: collect product, quantity and delivery details and give a relevant response.
   const enquiryForm = document.querySelector("#enquiry-form");
   if (enquiryForm) {
@@ -266,6 +281,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // GENERAL CONTACT FORM
+  // Validate general messages and prepare a mailto draft after the business email is configured.
   // General contact: prepare a message for the organisation's configured email recipient.
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
