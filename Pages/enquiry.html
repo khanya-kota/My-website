@@ -27,11 +27,13 @@
 <!-- Starts the visible body and identifies the Enquiry page for CSS. -->
 <body class="enquiry-page">
 <!-- Starts the website header. -->
+<!-- Starts the shared website header and branding. -->
 <header class="site-header">
     <!-- Displays the website logo. -->
     <div class="logo">Green Roots Organics</div>
     <!-- Starts the main navigation menu. -->
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <!-- Provides links to the other pages of the website. -->
     <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
         <!-- Links to the homepage. -->
         <a class="nav-link" href="../index.html">Home</a>
@@ -49,8 +51,10 @@
 <!-- Ends the website header. -->
 </header>
 <!-- Starts the main Enquiry page content. -->
+<!-- Holds product enquiry information and the enquiry form. -->
 <main class="site-main enquiry-main">
     <!-- Starts the enquiry introduction section. -->
+    <!-- Separates the enquiry introduction, guidance and form. -->
     <section class="enquiry-intro">
         <!-- Displays the main enquiry heading. -->
         <h1 class="page-title">Contact & Enquiry</h1>
@@ -59,6 +63,7 @@
     <!-- Ends the introduction section. -->
     </section>
     <!-- Starts the list of enquiry topics. -->
+    <!-- Separates the enquiry introduction, guidance and form. -->
     <section class="info enquiry-info">
         <!-- Displays the enquiry topics heading. -->
         <h2>What You Can Ask About</h2>
@@ -79,8 +84,10 @@
     <!-- Ends the information section. -->
     </section>
     <!-- Starts the form section. -->
+    <!-- Separates the enquiry introduction, guidance and form. -->
     <section class="form-section">
         <!-- Creates the enquiry form and sends it using POST. -->
+        <!-- Collects product and delivery enquiry details for JavaScript validation. -->
         <form class="enquiry-form" id="enquiry-form" action="#" method="post" novalidate>
 <p>Complete this form to ask about a product, subscription or delivery. We will confirm current stock, prices and delivery arrangements.</p>
 <div class="form-group"><label for="name">Full name</label><input class="form-control" type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="80"><small class="field-error" id="name-error" aria-live="polite"></small>
@@ -102,6 +109,7 @@
 <!-- Ends the main content. -->
 </main>
 <!-- Starts the website footer. -->
+<!-- Displays the shared footer and supporting website information. -->
 <footer class="site-footer">
     <!-- Displays the copyright information. -->
     <p>&copy; 2026 Green Roots Organics. All Rights Reserved.</p>
