@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- This sitemap lists the public pages that search engines can discover. -->
+  <!-- The homepage is listed first, followed by the main website pages. -->
   <url><loc>https://khanya-kota.github.io/My-website/</loc></url>
+  <!-- Company information and supporting content pages. -->
   <url><loc>https://khanya-kota.github.io/My-website/Pages/about.html</loc></url>
   <url><loc>https://khanya-kota.github.io/My-website/Pages/context.html</loc></url>
   <url><loc>https://khanya-kota.github.io/My-website/Pages/descriptive.html</loc></url>
+  <!-- Customer enquiry and contact pages. -->
   <url><loc>https://khanya-kota.github.io/My-website/Pages/enquiry.html</loc></url>
   <url><loc>https://khanya-kota.github.io/My-website/Pages/contact.html</loc></url>
 </urlset>
